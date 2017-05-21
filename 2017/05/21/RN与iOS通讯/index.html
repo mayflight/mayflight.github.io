@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="ES6," />
+  <meta name="keywords" content="RN," />
 
 
 
@@ -90,29 +90,19 @@
 
 
 
-<meta name="description" content="关于Let Var  1、let不会发生变量的提升，Var会发生变量提升  2、Let是块级作用域  3、暂时性死区 关于箭头函数  1、箭头函数的初识   2、箭头函数绑定this 异步相关  1、Promise对象可以用来表示一个异步操作  2、async - await 简化异步操作写法 2.1最后我们模仿一下fetch以便加深你的印象">
-<meta name="keywords" content="ES6">
+<meta name="description" content="RN可以很好的与原生进行交互，我们首先看看效果吧： 首先我们来看看React Native 怎样调用iOS的代码并且带有简单的参数：在iOS工程里面我们新建一个类iOSExport，iOSExport将会实现RCTBridgeModule协议。首先我们要在iOSExport类的实现中添加这句宏定义：RCT_EXPORT_MODULE()RCT_EXPORT_MODULE()如果你不传入参数，那么你">
+<meta name="keywords" content="RN">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ES6语法整理">
-<meta property="og:url" content="http://13fafa.cn/2017/05/21/ES6语法整理/index.html">
+<meta property="og:title" content="RN与iOS通讯">
+<meta property="og:url" content="http://13fafa.cn/2017/05/21/RN与iOS通讯/index.html">
 <meta property="og:site_name" content="步迹足印">
-<meta property="og:description" content="关于Let Var  1、let不会发生变量的提升，Var会发生变量提升  2、Let是块级作用域  3、暂时性死区 关于箭头函数  1、箭头函数的初识   2、箭头函数绑定this 异步相关  1、Promise对象可以用来表示一个异步操作  2、async - await 简化异步操作写法 2.1最后我们模仿一下fetch以便加深你的印象">
-<meta property="og:image" content="http://img.blog.csdn.net/20170315100111075?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzA5NzA1Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20170315100225075?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzA5NzA1Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20170315100329516?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzA5NzA1Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20170315100419155?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzA5NzA1Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20170315100502253?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzA5NzA1Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20170315100549921?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzA5NzA1Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20170315100628562?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzA5NzA1Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20170315100732490?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzA5NzA1Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20170315100750834?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzA5NzA1Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20170315100956681?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzA5NzA1Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20170315100904845?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzA5NzA1Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:updated_time" content="2017-05-21T03:58:53.000Z">
+<meta property="og:description" content="RN可以很好的与原生进行交互，我们首先看看效果吧： 首先我们来看看React Native 怎样调用iOS的代码并且带有简单的参数：在iOS工程里面我们新建一个类iOSExport，iOSExport将会实现RCTBridgeModule协议。首先我们要在iOSExport类的实现中添加这句宏定义：RCT_EXPORT_MODULE()RCT_EXPORT_MODULE()如果你不传入参数，那么你">
+<meta property="og:image" content="http://img.blog.csdn.net/20161212180414214?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzA5NzA1Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:updated_time" content="2017-05-21T05:09:59.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ES6语法整理">
-<meta name="twitter:description" content="关于Let Var  1、let不会发生变量的提升，Var会发生变量提升  2、Let是块级作用域  3、暂时性死区 关于箭头函数  1、箭头函数的初识   2、箭头函数绑定this 异步相关  1、Promise对象可以用来表示一个异步操作  2、async - await 简化异步操作写法 2.1最后我们模仿一下fetch以便加深你的印象">
-<meta name="twitter:image" content="http://img.blog.csdn.net/20170315100111075?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzA5NzA1Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta name="twitter:title" content="RN与iOS通讯">
+<meta name="twitter:description" content="RN可以很好的与原生进行交互，我们首先看看效果吧： 首先我们来看看React Native 怎样调用iOS的代码并且带有简单的参数：在iOS工程里面我们新建一个类iOSExport，iOSExport将会实现RCTBridgeModule协议。首先我们要在iOSExport类的实现中添加这句宏定义：RCT_EXPORT_MODULE()RCT_EXPORT_MODULE()如果你不传入参数，那么你">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20161212180414214?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzA5NzA1Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
 
 
 
@@ -140,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://13fafa.cn/2017/05/21/ES6语法整理/"/>
+  <link rel="canonical" href="http://13fafa.cn/2017/05/21/RN与iOS通讯/"/>
 
 
 
 
 
-  <title>ES6语法整理 | 步迹足印</title>
+  <title>RN与iOS通讯 | 步迹足印</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -309,7 +299,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://13fafa.cn/2017/05/21/ES6语法整理/">
+    <link itemprop="mainEntityOfPage" href="http://13fafa.cn/2017/05/21/RN与iOS通讯/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="叶亚冬">
@@ -326,7 +316,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">ES6语法整理</h1>
+          <h1 class="post-title" itemprop="name headline">RN与iOS通讯</h1>
         
 
         <div class="post-meta">
@@ -338,7 +328,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-21T11:57:44+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-21T12:03:12+08:00">
                 2017-05-21
               </time>
             
@@ -357,7 +347,7 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a class="cloud-tie-join-count" href="/2017/05/21/ES6语法整理/#comments" itemprop="discussionUrl">
+                <a class="cloud-tie-join-count" href="/2017/05/21/RN与iOS通讯/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count join-count" itemprop="commentCount"></span>
                 </a>
               </span>
@@ -383,27 +373,44 @@
       
 
       
-        <p><strong>关于Let Var</strong></p>
-<hr>
-<p><em>1、let不会发生变量的提升，Var会发生变量提升</em><br><img src="http://img.blog.csdn.net/20170315100111075?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzA5NzA1Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-<hr>
-<p><em>2、Let是块级作用域</em><br><img src="http://img.blog.csdn.net/20170315100225075?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzA5NzA1Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-<hr>
-<p><em>3、暂时性死区</em><br><img src="http://img.blog.csdn.net/20170315100329516?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzA5NzA1Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-<p><img src="http://img.blog.csdn.net/20170315100419155?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzA5NzA1Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br><strong>关于箭头函数</strong></p>
-<hr>
-<p><em>1、箭头函数的初识</em></p>
-<p><img src="http://img.blog.csdn.net/20170315100502253?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzA5NzA1Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-<hr>
-<p><em>2、箭头函数绑定this</em><br><img src="http://img.blog.csdn.net/20170315100549921?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzA5NzA1Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-<p><strong>异步相关</strong></p>
-<hr>
-<p><em>1、Promise对象可以用来表示一个异步操作</em><br><img src="http://img.blog.csdn.net/20170315100628562?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzA5NzA1Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-<hr>
-<p><em>2、async - await 简化异步操作写法</em><br><img src="http://img.blog.csdn.net/20170315100732490?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzA5NzA1Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-<h2 id=""><a href="#" class="headerlink" title=""></a><img src="http://img.blog.csdn.net/20170315100750834?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzA5NzA1Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></h2><p><em>2.1最后我们模仿一下fetch以便加深你的印象</em></p>
-<p><img src="http://img.blog.csdn.net/20170315100956681?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzA5NzA1Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-<p><img src="http://img.blog.csdn.net/20170315100904845?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzA5NzA1Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+        <p>RN可以很好的与原生进行交互，我们首先看看效果吧：<br><img src="http://img.blog.csdn.net/20161212180414214?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzA5NzA1Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="bridge"></p>
+<p>首先我们来看看React Native 怎样调用iOS的代码并且带有简单的参数：<br>在iOS工程里面我们新建一个类iOSExport，iOSExport将会实现RCTBridgeModule协议。<br>首先我们要在iOSExport类的实现中添加这句宏定义：RCT_EXPORT_MODULE()<br>RCT_EXPORT_MODULE()如果你不传入参数，那么你在iOS中导出的模块名就是类名，你也可以插入参数作为自定义模块名。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">@implementation iOSExport</div><div class="line">//定义导出的模块名</div><div class="line">RCT_EXPORT_MODULE()</div><div class="line">@end</div></pre></td></tr></table></figure>
+<p>后面我们就可以实现协议的代理方法了，协议方法的实现需要在RCT_EXPORT_METHOD，这个宏里面。<br>我们先写一个有两个参数的方法给js调用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">@implementation iOSExport</div><div class="line">//定义导出的模块名</div><div class="line">RCT_EXPORT_MODULE()</div><div class="line"></div><div class="line">//定义导出的方法名</div><div class="line">RCT_EXPORT_METHOD(rnToiOS:(NSString *)name :(NSInteger)age) &#123;</div><div class="line">  NSString *st = [NSString stringWithFormat:@&quot;name:%@,age:%ld&quot;,name,age];</div><div class="line">    NSLog(@&quot;test:%@&quot;,st);</div><div class="line">    [self alter:st];</div><div class="line">&#125;</div><div class="line">@end</div></pre></td></tr></table></figure>
+<p>这样OC端的工作就OK了，下面我们继续看看js端怎么调用：<br>首先我们要在js文件里面 import NativeModules<br>然后在我们需要使用的时候获取导出的模块，我们再用模块调用iOS的导出的函数名就可以了，看代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">//创建一个可以点击的按钮，点击按钮后调用iOS的rnToiOS方法</div><div class="line">&lt;TouchableHighlight </div><div class="line">	style=&#123;[styles.highLight,&#123;marginTop:50&#125;]&#125; </div><div class="line">	underlayColor=&apos;#deb887&apos; </div><div class="line">	activeOpacity=&#123;0.8&#125;</div><div class="line">	onPress=&#123;() =&gt; this._nameAndAge()&#125;</div><div class="line">	&gt;</div><div class="line">	&lt;Text&gt;简单数据传递&lt;/Text&gt;</div><div class="line">&lt;/TouchableHighlight&gt;</div><div class="line"></div><div class="line">_nameAndAge() &#123; //多参数的传递</div><div class="line">		var iOSExport = NativeModules.iOSExport //获取到模块</div><div class="line">		iOSExport.rnToiOS(&apos;帝君&apos;,200) //直接调用函数</div><div class="line">		this.setState(&#123;</div><div class="line">			text:&apos;rnToiOS&apos;</div><div class="line">		&#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>下面我们再看如何在js端调用iOS的含有字典参数和回调函数的方法。iOS提供给js的回调函数是使用block实现的，看下回调函数的说明：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * The type of a block that is capable of sending a response to a bridged</div><div class="line"> * operation. Use this for returning callback methods to JS.</div><div class="line"> */</div><div class="line">typedef void (^RCTResponseSenderBlock)(NSArray *response);</div></pre></td></tr></table></figure>
+<p>下面我们就可以用回调函数做参数，写一个我们需要的方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">RCT_EXPORT_METHOD(rnToiOSwithDic:(NSDictionary*)dic andCallback:(RCTResponseSenderBlock)callback) &#123;</div><div class="line">  NSMutableString *st = [NSMutableString string];</div><div class="line">  for (NSObject *key in dic.allKeys) &#123;</div><div class="line">    NSString *string = [NSString stringWithFormat:@&quot;%@:%@;&quot;,key,[dic objectForKey:key]];</div><div class="line">     [st appendString:string];</div><div class="line">  &#125;</div><div class="line">  callback(@[@&quot;error&quot;,st]);</div><div class="line">  [self alter:st];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>最终我们的回调函数给js的是一个数组，一般这个数组的第一个元素表示的都是错误。<br>看下如何在js端调用这个方法:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">//为了测试方便我们先写个按钮</div><div class="line">&lt;TouchableHighlight </div><div class="line">	style=&#123;styles.highLight&#125; </div><div class="line">	underlayColor=&apos;coral&apos; </div><div class="line">	activeOpacity=&#123;0.8&#125;</div><div class="line">	onPress=&#123;() =&gt; this._dic()&#125;</div><div class="line">	&gt;</div><div class="line">	&lt;Text&gt;字典的传递和回调&lt;/Text&gt;</div><div class="line">&lt;/TouchableHighlight&gt;</div><div class="line"></div><div class="line">//字典的传递和返回值</div><div class="line">	_dic() &#123; </div><div class="line">		var iOSExport = NativeModules.iOSExport //获取导出的模块</div><div class="line">		iOSExport.rnToiOSwithDic(&#123; //调用iOS的方法，第一个参数是字典</div><div class="line">			&apos;姓名&apos;:&apos;幽冥&apos;,</div><div class="line">			&apos;年龄&apos;:20,</div><div class="line">			&apos;法力&apos;:&apos;200&apos;</div><div class="line">		&#125;,(error,strings) =&gt;&#123; //第二个参数是函数，做为回调函数给iOS将由iOS调用</div><div class="line"></div><div class="line">			this.setState(&#123;</div><div class="line">				text:strings</div><div class="line">			&#125;)</div><div class="line">		&#125;)</div><div class="line">		this.setState(&#123;</div><div class="line">			text:&apos;rnToiOSwithDic&apos;</div><div class="line">		&#125;)</div><div class="line">	&#125;</div></pre></td></tr></table></figure>
+<p>上面对于回调函数的处理稍显麻烦，我们再看使用promise实现的回调函数：<br>我们先看下iOS里面的两个block:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * Block that bridge modules use to resolve the JS promise waiting for a result.</div><div class="line"> * Nil results are supported and are converted to JS&apos;s undefined value.</div><div class="line"> */</div><div class="line">typedef void (^RCTPromiseResolveBlock)(id result);</div><div class="line"></div><div class="line">/**</div><div class="line"> * Block that bridge modules use to reject the JS promise waiting for a result.</div><div class="line"> * The error may be nil but it is preferable to pass an NSError object for more</div><div class="line"> * precise error messages.</div><div class="line"> */</div><div class="line">typedef void (^RCTPromiseRejectBlock)(NSString *code, NSString *message, NSError *error);</div></pre></td></tr></table></figure>
+<p>这两个block其实就是实现promise回调的关键，一个是成功的回调一个是失败的回调，看下iOS端的实现：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">RCT_EXPORT_METHOD(rnToiOSAge:(NSInteger)age resolve:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject) &#123;</div><div class="line">  if (age &gt; 23) &#123;</div><div class="line">    resolve(@[@&quot;句芒&quot;]);</div><div class="line">  &#125;else &#123;</div><div class="line">    reject(@&quot;101&quot;,@&quot;年龄错误&quot;,[NSError errorWithDomain:@&quot;错误&quot; code:1 userInfo:nil]);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>在js里面我要调用这个方法其实只要传一个参数age就可以了，后面两个参数可能会转换为promis作为返回值处理，看下js端是怎么调用的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">//作为测试的按钮</div><div class="line">&lt;TouchableHighlight </div><div class="line">	style=&#123;styles.highLight&#125; </div><div class="line">	underlayColor=&apos;#5f9ea0&apos; </div><div class="line">	activeOpacity=&#123;0.8&#125;</div><div class="line">	onPress=&#123;() =&gt; this._promise(30)&#125;</div><div class="line">	&gt;</div><div class="line">	&lt;Text&gt;Promise回调&lt;/Text&gt;</div><div class="line">&lt;/TouchableHighlight&gt;</div><div class="line">//按钮的回调事件，将在这里调用iOS的方法</div><div class="line">async _promise(age) &#123; //Promise回调,异步执行</div><div class="line">	try&#123;</div><div class="line">			var iOSExport = NativeModules.iOSExport</div><div class="line">			var resolve = await iOSExport.rnToiOSAge(age) //执行iOS函数并且等待结果</div><div class="line">			this.setState(&#123;</div><div class="line">				text:resolve</div><div class="line">			&#125;)</div><div class="line">	&#125;catch(e) &#123;</div><div class="line">			console.error(e);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这里要说下，因为我们是采用promsie返回值的方式处理回调的，所以我们不知道何时将返回结果，所以按钮的点击函数_promise(age)前面要加个async关键字标识为异步函数，我们在函数里面可以使用try{}catch(){}来捕获异常，因为我们明确的知道如果age小于24就将报错，所以我们在这里一定要添加异常处理。注意了在执行iOS函数的时候也要加await关键字的，等待获取到返回值后再执行下面的操作。<br>在iOS里面也可以很方便地给js注入常量，采用如下方法可以方便的提供常量：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * Injects constants into JS. These constants are made accessible via</div><div class="line"> * NativeModules.ModuleName.X.  It is only called once for the lifetime of the</div><div class="line"> * bridge, so it is not suitable for returning dynamic values, but may be used</div><div class="line"> * for long-lived values such as session keys, that are regenerated only as</div><div class="line"> * part of a reload of the entire React application.</div><div class="line"> */</div><div class="line">- (NSDictionary&lt;NSString *, id&gt; *)constantsToExport;</div></pre></td></tr></table></figure>
+<p>这里要注意了，这函数只会在桥接的过程中执行一次，所以不太适合变量的传递，iOS里面的实现：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//为js提供静态数据</div><div class="line">- (NSDictionary&lt;NSString *,id&gt; *)constantsToExport &#123;</div><div class="line">  return @&#123;@&quot;name&quot;:@&quot;闲&quot;,@&quot;age&quot;:@&quot;22&quot;&#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>js如何调用的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&lt;TouchableHighlight </div><div class="line">	style=&#123;styles.highLight&#125; </div><div class="line">	underlayColor=&apos;#5f9ea0&apos; </div><div class="line">	activeOpacity=&#123;0.8&#125;</div><div class="line">	onPress=&#123;() =&gt; this._getConst()&#125;</div><div class="line">	&gt;</div><div class="line">	&lt;Text&gt;获取iOS常量&lt;/Text&gt;</div><div class="line">&lt;/TouchableHighlight&gt;</div><div class="line"></div><div class="line">_getConst() &#123;</div><div class="line">	var iOSExport = NativeModules.iOSExport //获取模块</div><div class="line">	this.setState(&#123;</div><div class="line">		text:iOSExport.name+&apos;,&apos;+iOSExport.age //获取常量</div><div class="line">	&#125;) </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>在上面这些函数里面如果我想统一指定他们在什么线程里执行的，只要实现这函数就可以了：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//告诉程序这个模块的代码在哪个线程执行</div><div class="line">- (dispatch_queue_t)methodQueue &#123;</div><div class="line">  return dispatch_get_main_queue(); //返回一个指定的线程</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>前面说了那么多都是怎么在js里面调用iOS的方法的，那么如何让iOS主动发送消息给js呢。<br>首先我们更改一下iOSExport这个类，让它继承自RCTEventEmitter，并且删除协议，因为RCTEventEmitter这个类也会实现RCTBridgeModule协议的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">//继承自RCTEventEmitter的OC类将有资格给js发送消息</div><div class="line">@interface iOSExport :RCTEventEmitter</div><div class="line">@end</div></pre></td></tr></table></figure>
+<p>然后在iOSExport的实现里面我们还要重写一个方法，用来指定这模块将会发送哪些消息给js :</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">- (NSArray&lt;NSString *&gt; *)supportedEvents &#123;</div><div class="line">  return @[@&quot;sendName&quot;]; //这里返回的将是你要发送的消息名的数组。</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>然后我们就可以直接发送消息了：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">- (void)alter:(NSString *)st &#123;</div><div class="line">  UIAlertController *alter = [UIAlertController alertControllerWithTitle:@&quot;测试&quot; message:st preferredStyle:UIAlertControllerStyleAlert];</div><div class="line"> </div><div class="line">  [alter addAction:[UIAlertAction actionWithTitle:@&quot;了解&quot; style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) &#123;</div><div class="line">    //iOS发送通知给js</div><div class="line">    [self sendEventWithName:@&quot;sendName&quot; body:@&#123;@&quot;name&quot;:@&quot;江山&quot;,@&quot;age&quot;:@&quot;5000&quot;&#125;];</div><div class="line">  &#125;]];</div><div class="line">  [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alter animated:YES completion:nil];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>我们使用<code>- (void)sendEventWithName:(NSString *)eventName body:(id)body</code> 发送消息，eventName将是消息的名字，body可以传个字典作为消息体。<br>那么如何在js里面接受消息呢：<br>首先要import NativeEventEmitter，然后我们注册监听事件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">	componentWillMount() &#123;</div><div class="line">		//开始监听</div><div class="line">		var iOSExport = NativeModules.iOSExport</div><div class="line">		var emitter = new NativeEventEmitter(iOSExport) //用获取的模块创建监听器</div><div class="line">		this.subScription = emitter.addListener(&quot;sendName&quot;,(body) =&gt; this._getNotice(body)) //监听指定的事件，通过sendName这事件名来识别事件，(body) =&gt; this._getNotice(body)这是监听到事件后的处理方法，body 是iOS传过来的消息体</div><div class="line">&#125;</div><div class="line"></div><div class="line">_getNotice (body) &#123;</div><div class="line">	this.setState(&#123;</div><div class="line">		notice:body.name+&apos;,&apos;+body.age</div><div class="line">	&#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>最后我们要注销监听：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">componentWillUnmount() &#123;</div><div class="line">	//删除监听</div><div class="line">	this.subScription.remove()</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>以上源码都已经上传gitub，<a href="https://github.com/mayflight/React-Native.git" target="_blank" rel="external">源码下载</a></p>
 
       
     </div>
@@ -454,7 +461,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/ES6/" rel="tag"># ES6</a>
+            <a href="/tags/RN/" rel="tag"># RN</a>
           
         </div>
       
@@ -467,8 +474,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/21/iOS获取通讯录/" rel="next" title="iOS获取通讯录">
-                <i class="fa fa-chevron-left"></i> iOS获取通讯录
+              <a href="/2017/05/21/ES6语法整理/" rel="next" title="ES6语法整理">
+                <i class="fa fa-chevron-left"></i> ES6语法整理
               </a>
             
           </div>
@@ -477,8 +484,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/05/21/RN与iOS通讯/" rel="prev" title="RN与iOS通讯">
-                RN与iOS通讯 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/05/21/FlexBox布局/" rel="prev" title="FlexBox布局">
+                FlexBox布局 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -528,17 +535,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://www.wsfjq.com/photos/bd16006992.jpg"
@@ -602,22 +600,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">1.</span> <span class="nav-text"></span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
