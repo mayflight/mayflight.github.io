@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="iOS," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -90,17 +90,21 @@
 
 
 
-<meta name="description" content="fastlane初识   fastlane 是一个很棒的iOS和Andriod的一个自动化版本发布工具，它提供了一系列的插件用来解决打包发布上传应用市场这个过程一系列的问题。本教程将介绍如何通过fastlane来自动化上传一个应用到AppStore  fastlane环境搭建 在一切开始之前你需要确定你的电脑上有最新的Xcode命令行工具在终端输入：xcode-select --install 安">
-<meta name="keywords" content="iOS">
+<meta name="description" content="这段时间熟悉了一下ReactNative，里面的布局感觉很有意思，跟我以前接触的布局思想有很大不同，所以就自己测试了一些FlexBox的属性，一下是效果图：RN的布局主要依赖于FlexBox系统，它有如下几个主要属性：flex 视图的比重，这里注意了：In React Native flex does not work the same way that it does in CSSflexDir">
 <meta property="og:type" content="article">
-<meta property="og:title" content="iOS自动化发布工具fastlane">
-<meta property="og:url" content="http://13fafa.cn/2017/05/19/iOS自动化发布工具fastlane/index.html">
+<meta property="og:title" content="FlexBox布局">
+<meta property="og:url" content="http://13fafa.cn/2017/05/21/FlexBox布局/index.html">
 <meta property="og:site_name" content="步迹足印">
-<meta property="og:description" content="fastlane初识   fastlane 是一个很棒的iOS和Andriod的一个自动化版本发布工具，它提供了一系列的插件用来解决打包发布上传应用市场这个过程一系列的问题。本教程将介绍如何通过fastlane来自动化上传一个应用到AppStore  fastlane环境搭建 在一切开始之前你需要确定你的电脑上有最新的Xcode命令行工具在终端输入：xcode-select --install 安">
-<meta property="og:updated_time" content="2017-05-20T12:19:16.000Z">
+<meta property="og:description" content="这段时间熟悉了一下ReactNative，里面的布局感觉很有意思，跟我以前接触的布局思想有很大不同，所以就自己测试了一些FlexBox的属性，一下是效果图：RN的布局主要依赖于FlexBox系统，它有如下几个主要属性：flex 视图的比重，这里注意了：In React Native flex does not work the same way that it does in CSSflexDir">
+<meta property="og:image" content="http://img.blog.csdn.net/20161201154320935">
+<meta property="og:image" content="http://img.blog.csdn.net/20161201161754499">
+<meta property="og:image" content="http://img.blog.csdn.net/20161201162807002">
+<meta property="og:image" content="http://img.blog.csdn.net/20161201164255978">
+<meta property="og:updated_time" content="2017-05-21T04:16:09.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="iOS自动化发布工具fastlane">
-<meta name="twitter:description" content="fastlane初识   fastlane 是一个很棒的iOS和Andriod的一个自动化版本发布工具，它提供了一系列的插件用来解决打包发布上传应用市场这个过程一系列的问题。本教程将介绍如何通过fastlane来自动化上传一个应用到AppStore  fastlane环境搭建 在一切开始之前你需要确定你的电脑上有最新的Xcode命令行工具在终端输入：xcode-select --install 安">
+<meta name="twitter:title" content="FlexBox布局">
+<meta name="twitter:description" content="这段时间熟悉了一下ReactNative，里面的布局感觉很有意思，跟我以前接触的布局思想有很大不同，所以就自己测试了一些FlexBox的属性，一下是效果图：RN的布局主要依赖于FlexBox系统，它有如下几个主要属性：flex 视图的比重，这里注意了：In React Native flex does not work the same way that it does in CSSflexDir">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20161201154320935">
 
 
 
@@ -128,13 +132,13 @@
 
 
 
-  <link rel="canonical" href="http://13fafa.cn/2017/05/19/iOS自动化发布工具fastlane/"/>
+  <link rel="canonical" href="http://13fafa.cn/2017/05/21/FlexBox布局/"/>
 
 
 
 
 
-  <title>iOS自动化发布工具fastlane | 步迹足印</title>
+  <title>FlexBox布局 | 步迹足印</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -297,7 +301,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://13fafa.cn/2017/05/19/iOS自动化发布工具fastlane/">
+    <link itemprop="mainEntityOfPage" href="http://13fafa.cn/2017/05/21/FlexBox布局/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="叶亚冬">
@@ -314,7 +318,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">iOS自动化发布工具fastlane</h1>
+          <h1 class="post-title" itemprop="name headline">FlexBox布局</h1>
         
 
         <div class="post-meta">
@@ -326,8 +330,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-19T22:46:32+08:00">
-                2017-05-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-21T12:04:56+08:00">
+                2017-05-21
               </time>
             
 
@@ -345,7 +349,7 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a class="cloud-tie-join-count" href="/2017/05/19/iOS自动化发布工具fastlane/#comments" itemprop="discussionUrl">
+                <a class="cloud-tie-join-count" href="/2017/05/21/FlexBox布局/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count join-count" itemprop="commentCount"></span>
                 </a>
               </span>
@@ -371,129 +375,33 @@
       
 
       
-        <h1 id="fastlane初识"><a href="#fastlane初识" class="headerlink" title="fastlane初识"></a>fastlane初识</h1><blockquote>
-<p>  fastlane 是一个很棒的iOS和Andriod的一个自动化版本发布工具，它提供了一系列的插件用来解决打包发布上传应用市场这个过程一系列的问题。本教程将介绍如何通过fastlane来自动化上传一个应用到AppStore</p>
-</blockquote>
-<h1 id="fastlane环境搭建"><a href="#fastlane环境搭建" class="headerlink" title="fastlane环境搭建"></a>fastlane环境搭建</h1><ol>
-<li>在一切开始之前你需要确定你的电脑上有最新的Xcode命令行工具在终端输入：<br><br><code>xcode-select --install</code></li>
-<li>安装fastlane:<br>你有三种方式在你的电脑上安装fastlane<ul>
-<li>使用命令行<code>brew cask install fastlane</code> 通过homewbrew软件包管理器安装</li>
-<li>使用命令行<code>sudo gem install fastlane -NV</code> 通过gem安装</li>
-<li>如果你使用上面的命令行安装出错了，那么你可以直接点击<a href="https://download.fastlane.tools/" target="_blank" rel="external">连接</a>下载安装包来安装fastlane</li>
-</ul>
-</li>
-<li>初始化:<br>进入你app的根目录下执行命令行 <code>fastlane init</code> </li>
-</ol>
-<p>至此你将可以通过fastlane来管理你项目的发布过程。</p>
-<h1 id="fastlane的常用插件"><a href="#fastlane的常用插件" class="headerlink" title="fastlane的常用插件"></a>fastlane的常用插件</h1><h2 id="produce"><a href="#produce" class="headerlink" title="produce"></a>produce</h2><blockquote>
-<p>Creates the given application on iTC and the Dev Portal if necessary<br><br>produce插件是用来在iTunes Connect里面创建你自己的应用的（如果有则不创建）</p>
-</blockquote>
-<p>procuce有很多可选参数，下面简单介绍几个:<br></p>
-<ul>
-<li>username 用户名，这个就是你的appid账号</li>
-<li>team_id 团队id，这个是你所在团队的id</li>
-<li>app_identifier 你应用的唯一标识符,可以填bundle Id</li>
-<li>app_name 你应用的名称</li>
-<li>language 应用支持的语言，简体中文：Simplified Chinese</li>
-<li>app_version app的版本号 1.0</li>
-<li>sku 套装id，简单点直接写bundle Id</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">lane :createApp do |options|</div><div class="line">	 produce(</div><div class="line">      username: options[:username], </div><div class="line">      team_id: options[:teamid], </div><div class="line">      app_identifier: options[:appidentifier], </div><div class="line">      app_name: options[:appname], </div><div class="line">      language: &quot;Simplified Chinese&quot;,</div><div class="line">      app_version: &quot;1.0&quot;, </div><div class="line">      sku: options[:appidentifier]</div><div class="line">    )</div><div class="line">end</div></pre></td></tr></table></figure>
-<p><em>我们可以使用lane 定义一个代码块用来封装我们需要的功能，同时可以使用options来配置参数</em></p>
-<p>更多可用参数请点击这里<a href="https://docs.fastlane.tools/actions/" target="_blank" rel="external">More</a></p>
-<h2 id="cert"><a href="#cert" class="headerlink" title="cert"></a>cert</h2><blockquote>
-<p> Fetch or generate the latest available code signing identity<br><br> cret插件可以用来获取最新的代码签名证书,官方推荐配合match插件使用（如果你需要进行团队合作）</p>
-</blockquote>
-<p>介绍几个cert的可选参数:<br></p>
-<ul>
-<li>username 用户名，你的苹果开发者账号</li>
-<li>team_id 团队的Id</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">cert(  </div><div class="line">     username: options[:username],</div><div class="line">     team_id: options[:teamid] </div><div class="line">   )</div></pre></td></tr></table></figure>
-<p>更多可用的参数请点击这里<a href="https://docs.fastlane.tools/actions/" target="_blank" rel="external">More</a></p>
-<h2 id="pem"><a href="#pem" class="headerlink" title="pem"></a>pem</h2><blockquote>
-<p>Makes sure a valid push profile is active and creates a new one if needed<br><br>pem 插件是用来创建iOS推送证书的，它会先确定是否有一个可用的推送证书如果有需要会创建一个新的推送证书</p>
-</blockquote>
-<p>可选参数:<br></p>
-<ul>
-<li>username 用户名，就是你的开发者账号</li>
-<li>team_id 团队的Id</li>
-<li>p12_password 用于p12文件的密码</li>
-<li>generate_p12 创建一个p12文件</li>
-<li>output_path 导出的证书钥匙串等的存放目录</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">pem(</div><div class="line">    username: options[:username],</div><div class="line">    team_id: options[:teamid],</div><div class="line">    p12_password: &quot;12345678&quot;,</div><div class="line">    app_identifier: options[:appidentifier],</div><div class="line">    generate_p12: true,</div><div class="line">    output_path: &quot;../#&#123;options[:appname]&#125;/&quot;</div><div class="line">  )</div></pre></td></tr></table></figure>
-<p>更多可用的参数请点击这里<a href="https://docs.fastlane.tools/actions/" target="_blank" rel="external">More</a></p>
-<h2 id="sigh"><a href="#sigh" class="headerlink" title="sigh"></a>sigh</h2><blockquote>
-<p>Generates a provisioning profile. Stores the profile in the current folder .<br><br>sigh 是用来创建配置文件provisioning的<br><br>如果需要进行团队合作建议配合match插件使用sigh</p>
-</blockquote>
-<p>可选参数:<br></p>
-<ul>
-<li>force 是否更新配置文件</li>
-<li>app_identifier app的唯一标识符 bundleId id</li>
-<li>username 用户名，你的苹果开发者账号</li>
-<li>team_id 团队的Id</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">sigh(</div><div class="line">     force: true, </div><div class="line">     username: options[:username], </div><div class="line">     team_id: options[:teamid], </div><div class="line">     app_identifier: options[:appidentifier]</div><div class="line">   )</div></pre></td></tr></table></figure>
-<p>更多可用的参数请点击这里<a href="https://docs.fastlane.tools/actions/" target="_blank" rel="external">More</a></p>
-<h2 id="gym"><a href="#gym" class="headerlink" title="gym"></a>gym</h2><blockquote>
-<p>Easily build and sign your app using gym<br><br>gym插件可以对你的项目进行编译打包并且进行签名</p>
-</blockquote>
-<p>可用的参数:<br></p>
-<ul>
-<li>scheme 待编译工程的schem，可以使用命令行<code>xcodebuild -list</code>来获取可用的schem值</li>
-<li>clean 是否在编译之前清理工程</li>
-<li>silent 是否隐藏不必要信息</li>
-<li>output_directory 编译好的ipa包的存放目录</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">gym(</div><div class="line"> silent: true, </div><div class="line"> clean: true</div><div class="line"> )</div></pre></td></tr></table></figure>
-<p>更多可用的参数请点击这里<a href="https://docs.fastlane.tools/actions/" target="_blank" rel="external">More</a></p>
-<h2 id="snapshot"><a href="#snapshot" class="headerlink" title="snapshot"></a>snapshot</h2><blockquote>
-<p>Generate new localised screenshots on multiple devices<br><br>自动截图工具，可以对应用截图自动生成iTunes Connect需要的预览图片</p>
-</blockquote>
-<p>可用参数:</p>
-<ul>
-<li>devices 截图时使用的机器</li>
-<li>languages 使用的语言</li>
-<li>output_directory 生成图片的导出目录</li>
-</ul>
-<p>当然了，你可以使用命令<code>fastlane snapshot init</code> 来自动生成截图需要的配置，在自动生成的Snapfile文件里面会有一些提供好的参数可供选择</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">desc &quot;snapshot&quot;</div><div class="line"> lane :shot do</div><div class="line">   snapshot</div><div class="line"> end</div></pre></td></tr></table></figure>
-<p>截图插件的详细使用方式请点击<a href="https://docs.fastlane.tools/getting-started/ios/screenshots/#capture-screenshots-automatically" target="_blank" rel="external">这里</a></p>
-<p>更多可用的参数请点击这里<a href="https://docs.fastlane.tools/actions/" target="_blank" rel="external">More</a></p>
-<h2 id="deliver"><a href="#deliver" class="headerlink" title="deliver"></a>deliver</h2><blockquote>
-<p>Uses deliver to upload new app metadata and builds to iTunes Connect<br><br>上传ipa包到iTunes Connect</p>
-</blockquote>
-<p>可用的参数:<br></p>
-<ul>
-<li>app_identifier 应用的bundle id</li>
-<li>username 开发者账号</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">deliver(</div><div class="line">   app_identifier: options[:appidentifier], </div><div class="line">   username: options[:username] </div><div class="line">   )</div></pre></td></tr></table></figure>
-<p>更多可用的参数请点击这里<a href="https://docs.fastlane.tools/actions/" target="_blank" rel="external">More</a></p>
-<h1 id="fastlane-buildupload"><a href="#fastlane-buildupload" class="headerlink" title="fastlane buildupload"></a>fastlane buildupload</h1><p>这里提供一个可用的demo来对工程进行自动化打包上传</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">desc &quot;build your application to an ipa and upload the ipa&quot;</div><div class="line">desc &quot;if you want upload an ipa to itunes Connect ,please use command line : fastlane buildupload&quot;</div><div class="line"> lane :buildupload do |options|</div><div class="line">   produce(</div><div class="line">     username: options[:username],</div><div class="line">     team_id: options[:teamid], </div><div class="line">     app_identifier: options[:appidentifier],</div><div class="line">     app_name: options[:appname], </div><div class="line">     language: &quot;Simplified Chinese&quot;, </div><div class="line">     app_version: &quot;1.0&quot;, </div><div class="line">     sku: options[:appidentifier],</div><div class="line">   )</div><div class="line">   cert(  </div><div class="line">     username: options[:username], </div><div class="line">     team_id: options[:teamid] </div><div class="line">   )</div><div class="line">   pem(</div><div class="line">     username: options[:username], </div><div class="line">     team_id: options[:teamid], </div><div class="line">     p12_password: &quot;12345678&quot;,</div><div class="line">     app_identifier: options[:appidentifier],</div><div class="line">     generate_p12: true,</div><div class="line">     output_path: &quot;../#&#123;options[:appname]&#125;/&quot;</div><div class="line">   )</div><div class="line">   sigh(</div><div class="line">     force: true, </div><div class="line">     username: options[:username], #</div><div class="line">     team_id: options[:teamid],</div><div class="line">     app_identifier: options[:appidentifier]</div><div class="line">   )</div><div class="line">   clear_derived_data</div><div class="line">   gym(</div><div class="line">     silent: true, </div><div class="line">     clean: true) </div><div class="line">   deliver(</div><div class="line">     app_identifier: options[:appidentifier], </div><div class="line">     username: options[:username]</div><div class="line">     )</div><div class="line"> end</div></pre></td></tr></table></figure>
-<p>调用命令：<br><code>fastlane buildupload 参数1 参数2 参数3 ...</code></p>
-<h1 id="使用shell修改工程配置"><a href="#使用shell修改工程配置" class="headerlink" title="使用shell修改工程配置"></a>使用shell修改工程配置</h1><blockquote>
-<p>在很多情况下我们使用自动化打包工具都是需要批量处理很多工程编译出不同的IPA包的，这就需要我们在使用fastlane之前先修改一些工程的配置</p>
-</blockquote>
-<ul>
-<li>从svn或者git等仓库里面checkout 代码</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">rm -rf deploy</div><div class="line">svn co svn://xxx/xxx/xxx/xxx deploy</div></pre></td></tr></table></figure>
-<ul>
-<li>从文件里面读取配置信息到数组如:</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">i=0</div><div class="line">for s in  `cat params/appname.txt`</div><div class="line">do</div><div class="line">	appnames[$&#123;i&#125;]=$&#123;s&#125;</div><div class="line">	i=$&#123;i&#125;+1	</div><div class="line">done</div></pre></td></tr></table></figure>
-<p>appname.txt文件里面一行写一个app的名字，有几个app就写几行<br>其他的诸如bundle id ，username 等信息类似</p>
-<ul>
-<li>修改应用的bundle Id <code>sed -i &#39;&#39; &quot;s/com.xxx.xxx/$1/g&quot; xxx.xcodeproj/project.pbxproj</code> $1，参数一是新的bundle id</li>
-<li>修改应用名称 <code>/usr/libexec/PlistBuddy -c &quot;Set :CFBundleDisplayName $2&quot; Jubaodai/Info.plist</code> $2是新的应用名称</li>
-<li>修改应用的icons图片 <code>cp -r ../pictures/$2/AppIcon.appiconset/. xxx/Assets.xcassets/AppIcon.appiconset</code></li>
-<li>修改fastlane 元数据里面的应用名称 <code>echo newAppName &gt; fastlane/metadata/zh-Hans/name.txt</code></li>
-<li>修改fastlane 里面上传iTunes Connect 的icon图片 <code>cp ../pictures/$1/app_icon.jpg fastlane/metadata/app_icon.jpg</code></li>
-<li>调用fastlane 进行自动打包 <code>fastlane buildupload username:${usernames[${i}]} teamid:${teamids[${i}]} appidentifier:${appidentifiers[${i}]} appname:${appnames[${i}]}</code></li>
-</ul>
+        <p>这段时间熟悉了一下ReactNative，里面的布局感觉很有意思，跟我以前接触的布局思想有很大不同，所以就自己测试了一些FlexBox的属性，一下是效果图：<br><img src="http://img.blog.csdn.net/20161201154320935" alt="这里写图片描述"><br>RN的布局主要依赖于FlexBox系统，它有如下几个主要属性：<br>flex 视图的比重，这里注意了：In React Native <code>flex</code> does not work the same way that it does in CSS<br>flexDirection 子视图在容器中排布的方向,这是用来确定主轴的 flexDirection controls which directions children of a container go<br>justifyContent 子视图在主轴的排列方式  justifyContent aligns children in the main direction<br>alignItems 子视图在主轴的交叉轴（次轴）排列方式 alignItems aligns children in the cross direction<br>alignSelf 子视图在次轴的排列方式，主要是用来重写父视图的alignItems<br>alignSelf controls how a child aligns in the cross direction,  overriding the alignItems of the parent.<br>position 布局方式，默认是相对布局relative<br>flexWrap 是否包裹 ，默认值是nowrap<br>接下来看代码实现：<br>首先我们也仿照官方的列子写个Circle类来描述作为子视图的球</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">class Circle extends Component &#123;</div><div class="line">	render() &#123;</div><div class="line">		var size = this.props.size || 20</div><div class="line">		var backgroundColor = this.props.backgroundColor || &apos;#dcdcdc&apos;</div><div class="line">		return(</div><div class="line">			&lt;View</div><div class="line">				style=&#123;&#123;</div><div class="line">					borderRadius:size/2,</div><div class="line">					backgroundColor:backgroundColor,</div><div class="line">					width:size,</div><div class="line">					height:size,</div><div class="line">					margin:2,</div><div class="line">					shadowOffset:&#123;width:4,height:4&#125;,</div><div class="line">					shadowColor:&apos;#a9a9a9&apos;,</div><div class="line">					shadowOpacity:0.6</div><div class="line">				&#125;&#125;</div><div class="line">			/&gt;</div><div class="line">		)&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>其次我们再写个CircleBlock类作为容器，其实就是小球的父视图：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">class Circle extends Component &#123;</div><div class="line">	render() &#123;</div><div class="line">		var size = this.props.size || 20</div><div class="line">		var backgroundColor = this.props.backgroundColor || &apos;#dcdcdc&apos;</div><div class="line">		return(</div><div class="line">			&lt;View</div><div class="line">				style=&#123;&#123;</div><div class="line">					borderRadius:size/2,</div><div class="line">					backgroundColor:backgroundColor,</div><div class="line">					width:size,</div><div class="line">					height:size,</div><div class="line">					margin:2,</div><div class="line">					shadowOffset:&#123;width:4,height:4&#125;,</div><div class="line">					shadowColor:&apos;#a9a9a9&apos;,</div><div class="line">					shadowOpacity:0.6</div><div class="line">				&#125;&#125;</div><div class="line">			/&gt;</div><div class="line">		)&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>先看看flexDirection这个属性有哪些值：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">flexDirection: ReactPropTypes.oneOf([</div><div class="line">  &apos;row&apos;, //我的理解就是横排</div><div class="line">  &apos;row-reverse&apos;, //横排颠倒，其实从效果上来看就是把row的一切都反过来</div><div class="line">  &apos;column&apos;, //竖排</div><div class="line">  &apos;column-reverse&apos; //竖排颠倒</div><div class="line">]),</div></pre></td></tr></table></figure>
+<p>以下几个属性的实际效果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&lt;Text&gt;flexDirection:row&lt;/Text&gt;</div><div class="line">&lt;CircleBlock style=&#123;&#123;flexDirection:&apos;row&apos;&#125;&#125;&gt;</div><div class="line">	&#123;minCircles&#125;</div><div class="line">&lt;/CircleBlock&gt;</div><div class="line">&lt;Text&gt;flexDirection:column&lt;/Text&gt;</div><div class="line">&lt;CircleBlock style=&#123;&#123;flexDirection:&apos;column&apos;&#125;&#125;&gt;</div><div class="line">	&#123;minCircles&#125;</div><div class="line">&lt;/CircleBlock&gt;</div><div class="line">&lt;Text&gt;flexDirection:row-reverse&lt;/Text&gt;</div><div class="line">&lt;CircleBlock style=&#123;&#123;flexDirection:&apos;row-reverse&apos;&#125;&#125;&gt;</div><div class="line">	&#123;minCircles&#125;</div><div class="line">&lt;/CircleBlock&gt;</div><div class="line">&lt;Text&gt;flexDirection:column-reverse&lt;/Text&gt;</div><div class="line">&lt;CircleBlock style=&#123;&#123;flexDirection:&apos;column-reverse&apos;&#125;&#125;&gt;</div><div class="line">	&#123;minCircles&#125;</div><div class="line">&lt;/CircleBlock&gt;</div></pre></td></tr></table></figure>
+<p><img src="http://img.blog.csdn.net/20161201161754499" alt="这里写图片描述"></p>
+<p>justifyContent作为子视图在主轴的排列方式有这些值：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">justifyContent: ReactPropTypes.oneOf([</div><div class="line">    &apos;flex-start&apos;, //从开始位置排列，值从左到右或从上到下</div><div class="line">    &apos;flex-end&apos;, //从结尾位置排列</div><div class="line">    &apos;center&apos;, //居中</div><div class="line">    &apos;space-between&apos;, //空间在子视图之间，从效果来看就是子视图等间距</div><div class="line">    &apos;space-around&apos; //空间环绕子视图，我的理解是每个子视图占据相同的空白</div><div class="line">  ]),</div></pre></td></tr></table></figure>
+<p>看代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">&lt;Text&gt;justifyContent:flex-start&lt;/Text&gt;</div><div class="line">&lt;CircleBlock style=&#123;&#123;justifyContent:&apos;flex-start&apos;&#125;&#125;&gt;</div><div class="line">	&#123;minCircles&#125;</div><div class="line">&lt;/CircleBlock&gt;</div><div class="line">&lt;Text&gt;justifyContent:center&lt;/Text&gt;</div><div class="line">&lt;CircleBlock style=&#123;&#123;justifyContent:&apos;center&apos;&#125;&#125;&gt;</div><div class="line">	&#123;minCircles&#125;</div><div class="line">&lt;/CircleBlock&gt;</div><div class="line">&lt;Text&gt;justifyContent:flex-end&lt;/Text&gt;</div><div class="line">&lt;CircleBlock style=&#123;&#123;justifyContent:&apos;flex-end&apos;&#125;&#125;&gt;</div><div class="line">	&#123;minCircles&#125;</div><div class="line">&lt;/CircleBlock&gt;</div><div class="line">&lt;Text&gt;justifyContent:space-between&lt;/Text&gt;</div><div class="line">&lt;CircleBlock style=&#123;&#123;justifyContent:&apos;space-between&apos;&#125;&#125;&gt;</div><div class="line">	&#123;minCircles&#125;</div><div class="line">&lt;/CircleBlock&gt;</div><div class="line">&lt;Text&gt;justifyContent:space-around&lt;/Text&gt;</div><div class="line">&lt;CircleBlock style=&#123;&#123;justifyContent:&apos;space-around&apos;&#125;&#125;&gt;</div><div class="line">	&#123;minCircles&#125;</div><div class="line">&lt;/CircleBlock&gt;</div></pre></td></tr></table></figure>
+<p>至于效果，是这样的<br><img src="http://img.blog.csdn.net/20161201162807002" alt="这里写图片描述"></p>
+<p>alignItems是子视图在主轴交叉轴的排列方式，有这些值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">alignItems: ReactPropTypes.oneOf([</div><div class="line">    &apos;flex-start&apos;, //从开始位置排列</div><div class="line">    &apos;flex-end&apos;, //从结尾处排列</div><div class="line">    &apos;center&apos;, //居中</div><div class="line">    &apos;stretch&apos; //拉伸</div><div class="line">  ]),</div></pre></td></tr></table></figure>
+<p>alignSelf做为对alignItems的重写，值与alignItems一样</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;Text&gt;alignItems: flex-start&lt;/Text&gt;</div><div class="line">	&lt;CircleBlock style=&#123;&#123;alignItems:&apos;flex-start&apos;,height:100&#125;&#125;&gt;</div><div class="line">		&#123;minCircles&#125;</div><div class="line">	&lt;/CircleBlock&gt;</div><div class="line">	&lt;Text&gt; alignItems:center&lt;/Text&gt;</div><div class="line">	&lt;CircleBlock style=&#123;&#123;alignItems:&apos;center&apos;,height:100&#125;&#125;&gt;</div><div class="line">		&#123;minCircles&#125;</div><div class="line">	&lt;/CircleBlock&gt;</div><div class="line">	&lt;Text&gt;alignItems:flex-end&lt;/Text&gt;</div><div class="line">	&lt;CircleBlock style=&#123;&#123;alignItems:&apos;flex-end&apos;,height:100&#125;&#125;&gt;</div><div class="line">		&#123;minCircles&#125;</div><div class="line">	&lt;/CircleBlock&gt;</div></pre></td></tr></table></figure>
+<p>flexWrap包裹</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">flexWrap: ReactPropTypes.oneOf([</div><div class="line">   &apos;wrap&apos;, //子视图超过一行的长度后将会换行</div><div class="line">   &apos;nowrap&apos; //子视图超过一行的长度后不换行</div><div class="line"> ]),</div></pre></td></tr></table></figure>
+<p>下面是代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">&lt;Text&gt;flexWrap:wrap&lt;/Text&gt;</div><div class="line">&lt;CircleBlock style=&#123;&#123;flexWrap:&apos;wrap&apos;,height:150&#125;&#125;&gt;</div><div class="line">	&#123;[minCircles,minCircles,minCircles,minCircles,minCircles,minCircles]&#125;</div><div class="line">&lt;/CircleBlock&gt;</div><div class="line">&lt;Text&gt;flexWrap:nowrap&lt;/Text&gt;</div><div class="line">&lt;CircleBlock style=&#123;&#123;flexWrap:&apos;nowrap&apos;,height:150&#125;&#125;&gt;</div><div class="line">	&#123;minCircles&#125;</div><div class="line">	&lt;CircleBlock style=&#123;&#123;width:100,flexWrap:&apos;wrap&apos;,marginVertical:40&#125;&#125;&gt;</div><div class="line">		&#123;minCircles&#125;</div><div class="line">	&lt;/CircleBlock&gt;</div><div class="line">&lt;/CircleBlock&gt;</div><div class="line">&lt;CircleBlock style=&#123;&#123;flexWrap:&apos;wrap&apos;,height:150&#125;&#125;&gt;</div><div class="line">	&lt;CircleBlock style=&#123;&#123;width:100,flexWrap:&apos;wrap&apos;,position:&apos;absolute&apos;,marginVertical:40&#125;&#125;&gt;</div><div class="line">		&#123;minCircles&#125;</div><div class="line">	&lt;/CircleBlock&gt;</div><div class="line">	&#123;minCircles&#125;</div><div class="line">&lt;/CircleBlock&gt;</div><div class="line">&lt;CircleBlock style=&#123;&#123;flexWrap:&apos;nowrap&apos;,height:150&#125;&#125;&gt;</div><div class="line">	&#123;minCircles&#125;</div><div class="line">	&lt;CircleBlock style=&#123;&#123;width:100,flexWrap:&apos;wrap&apos;,alignSelf:&apos;center&apos;&#125;&#125;&gt;</div><div class="line">		&#123;minCircles&#125;</div><div class="line">	&lt;/CircleBlock&gt;</div><div class="line">&lt;/CircleBlock&gt;</div></pre></td></tr></table></figure></p>
+<p>position当子视图需要在父视图里面精准定位是需要将子视图的position设置为absoulute</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">position: ReactPropTypes.oneOf([</div><div class="line">   &apos;absolute&apos;, //相对布局</div><div class="line">   &apos;relative&apos; //绝对布局</div><div class="line"> ]),</div></pre></td></tr></table></figure>
+<p>而且是这里面的绝对布局可以理解是对容器剩余空间的布局，要注意区分这段代码的实现和效果：<br>实现<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&lt;CircleBlock style=&#123;&#123;height:150&#125;&#125;&gt;</div><div class="line">					&#123;minCircles&#125;</div><div class="line">					&lt;CircleBlock style=&#123;&#123;width:100,flexWrap:&apos;wrap&apos;,marginVertical:40&#125;&#125;&gt;</div><div class="line">						&#123;minCircles&#125;</div><div class="line">					&lt;/CircleBlock&gt;</div><div class="line">				&lt;/CircleBlock&gt;</div><div class="line">				&lt;CircleBlock style=&#123;&#123;height:150&#125;&#125;&gt;</div><div class="line">					&lt;CircleBlock style=&#123;&#123;width:100,flexWrap:&apos;wrap&apos;,position:&apos;absolute&apos;,marginVertical:40&#125;&#125;&gt;</div><div class="line">						&#123;minCircles&#125;</div><div class="line">					&lt;/CircleBlock&gt;</div><div class="line">					&#123;minCircles&#125;</div><div class="line">				&lt;/CircleBlock&gt;</div><div class="line">				&lt;CircleBlock style=&#123;&#123;height:150&#125;&#125;&gt;</div><div class="line">					&#123;minCircles&#125;</div><div class="line">					&lt;CircleBlock style=&#123;&#123;width:100,flexWrap:&apos;wrap&apos;,alignSelf:&apos;center&apos;&#125;&#125;&gt;</div><div class="line">						&#123;minCircles&#125;</div><div class="line">					&lt;/CircleBlock&gt;</div><div class="line">				&lt;/CircleBlock&gt;</div></pre></td></tr></table></figure></p>
+<p>效果：</p>
+<p><img src="http://img.blog.csdn.net/20161201164255978" alt="这里写图片描述"></p>
+<p>源码已上传到git上面了，<a href="https://github.com/mayflight/React-Native.git" target="_blank" rel="external">下载源码</a></p>
 
       
     </div>
@@ -542,12 +450,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/iOS/" rel="tag"># iOS</a>
-          
-        </div>
-      
 
       
         
@@ -557,14 +459,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/05/21/iOS获取通讯录/" rel="next" title="iOS获取通讯录">
+                <i class="fa fa-chevron-left"></i> iOS获取通讯录
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/05/20/AppStore账号申请/" rel="prev" title="AppStore账号申请">
-                AppStore账号申请 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/05/21/iOS10语音识别/" rel="prev" title="iOS10语音识别">
+                iOS10语音识别 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -614,17 +520,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://www.wsfjq.com/photos/bd16006992.jpg"
@@ -688,22 +585,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#fastlane初识"><span class="nav-number">1.</span> <span class="nav-text">fastlane初识</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#fastlane环境搭建"><span class="nav-number">2.</span> <span class="nav-text">fastlane环境搭建</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#fastlane的常用插件"><span class="nav-number">3.</span> <span class="nav-text">fastlane的常用插件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#produce"><span class="nav-number">3.1.</span> <span class="nav-text">produce</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cert"><span class="nav-number">3.2.</span> <span class="nav-text">cert</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pem"><span class="nav-number">3.3.</span> <span class="nav-text">pem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sigh"><span class="nav-number">3.4.</span> <span class="nav-text">sigh</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gym"><span class="nav-number">3.5.</span> <span class="nav-text">gym</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#snapshot"><span class="nav-number">3.6.</span> <span class="nav-text">snapshot</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#deliver"><span class="nav-number">3.7.</span> <span class="nav-text">deliver</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#fastlane-buildupload"><span class="nav-number">4.</span> <span class="nav-text">fastlane buildupload</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用shell修改工程配置"><span class="nav-number">5.</span> <span class="nav-text">使用shell修改工程配置</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
