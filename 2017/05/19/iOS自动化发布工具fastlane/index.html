@@ -97,7 +97,7 @@
 <meta property="og:url" content="http://13fafa.cn/2017/05/19/iOS自动化发布工具fastlane/index.html">
 <meta property="og:site_name" content="步迹足印">
 <meta property="og:description" content="fastlane初识   fastlane 是一个很棒的iOS和Andriod的一个自动化版本发布工具，它提供了一系列的插件用来解决打包发布上传应用市场这个过程一系列的问题。本教程将介绍如何通过fastlane来自动化上传一个应用到AppStore  fastlane环境搭建 在一切开始之前你需要确定你的电脑上有最新的Xcode命令行工具在终端输入：xcode-select --install 安">
-<meta property="og:updated_time" content="2017-05-20T12:19:16.000Z">
+<meta property="og:updated_time" content="2017-06-02T14:23:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS自动化发布工具fastlane">
 <meta name="twitter:description" content="fastlane初识   fastlane 是一个很棒的iOS和Andriod的一个自动化版本发布工具，它提供了一系列的插件用来解决打包发布上传应用市场这个过程一系列的问题。本教程将介绍如何通过fastlane来自动化上传一个应用到AppStore  fastlane环境搭建 在一切开始之前你需要确定你的电脑上有最新的Xcode命令行工具在终端输入：xcode-select --install 安">
@@ -494,6 +494,16 @@
 <li>修改fastlane 里面上传iTunes Connect 的icon图片 <code>cp ../pictures/$1/app_icon.jpg fastlane/metadata/app_icon.jpg</code></li>
 <li>调用fastlane 进行自动打包 <code>fastlane buildupload username:${usernames[${i}]} teamid:${teamids[${i}]} appidentifier:${appidentifiers[${i}]} appname:${appnames[${i}]}</code></li>
 </ul>
+<h1 id="后续"><a href="#后续" class="headerlink" title="后续"></a>后续</h1><p>本人开始是使用zip压缩包安装的后来发现无法继续往上升级了，踩了很多坑才升级到新版本了，具体的就不多加赘述只记录几个知识点:</p>
+<ol>
+<li>卸载 <code>sudo gem uninstall fastlane</code></li>
+<li>删除 <code>rm -rf ~/.fastlane</code></li>
+<li>重装 <code>sudo gem install -n /usr/local/bin fastlane</code></li>
+<li>如果无法识别fastlane 检查路径配置是否正确<br><br><code>export PATH=&quot;$HOME/.fastlane/bin:$PATH&quot;</code></li>
+<li>如果出错 Connection reset by peer - SSL_connect,请检查是否使用RVM ruby命令 <code>rvm list</code></li>
+<li>如果没有使用RVM ruby 请使用rvm ruby ,若没有请先安装</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">rvm osx-ssl-certs update all</div><div class="line">rvm reinstall ruby-2.3.1 --with-openssl-dir=/usr/local</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -698,7 +708,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#fastlane初识"><span class="nav-number">1.</span> <span class="nav-text">fastlane初识</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#fastlane环境搭建"><span class="nav-number">2.</span> <span class="nav-text">fastlane环境搭建</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#fastlane的常用插件"><span class="nav-number">3.</span> <span class="nav-text">fastlane的常用插件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#produce"><span class="nav-number">3.1.</span> <span class="nav-text">produce</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cert"><span class="nav-number">3.2.</span> <span class="nav-text">cert</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pem"><span class="nav-number">3.3.</span> <span class="nav-text">pem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sigh"><span class="nav-number">3.4.</span> <span class="nav-text">sigh</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gym"><span class="nav-number">3.5.</span> <span class="nav-text">gym</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#snapshot"><span class="nav-number">3.6.</span> <span class="nav-text">snapshot</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#deliver"><span class="nav-number">3.7.</span> <span class="nav-text">deliver</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#fastlane-buildupload"><span class="nav-number">4.</span> <span class="nav-text">fastlane buildupload</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用shell修改工程配置"><span class="nav-number">5.</span> <span class="nav-text">使用shell修改工程配置</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#fastlane初识"><span class="nav-number">1.</span> <span class="nav-text">fastlane初识</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#fastlane环境搭建"><span class="nav-number">2.</span> <span class="nav-text">fastlane环境搭建</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#fastlane的常用插件"><span class="nav-number">3.</span> <span class="nav-text">fastlane的常用插件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#produce"><span class="nav-number">3.1.</span> <span class="nav-text">produce</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cert"><span class="nav-number">3.2.</span> <span class="nav-text">cert</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pem"><span class="nav-number">3.3.</span> <span class="nav-text">pem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sigh"><span class="nav-number">3.4.</span> <span class="nav-text">sigh</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gym"><span class="nav-number">3.5.</span> <span class="nav-text">gym</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#snapshot"><span class="nav-number">3.6.</span> <span class="nav-text">snapshot</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#deliver"><span class="nav-number">3.7.</span> <span class="nav-text">deliver</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#fastlane-buildupload"><span class="nav-number">4.</span> <span class="nav-text">fastlane buildupload</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用shell修改工程配置"><span class="nav-number">5.</span> <span class="nav-text">使用shell修改工程配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#后续"><span class="nav-number">6.</span> <span class="nav-text">后续</span></a></li></ol></div>
             
 
           </div>
