@@ -97,7 +97,7 @@
 <meta property="og:url" content="http://13fafa.cn/2017/05/19/iOS自动化发布工具fastlane/index.html">
 <meta property="og:site_name" content="步迹足印">
 <meta property="og:description" content="fastlane初识   fastlane 是一个很棒的iOS和Andriod的一个自动化版本发布工具，它提供了一系列的插件用来解决打包发布上传应用市场这个过程一系列的问题。本教程将介绍如何通过fastlane来自动化上传一个应用到AppStore  fastlane环境搭建 在一切开始之前你需要确定你的电脑上有最新的Xcode命令行工具在终端输入：xcode-select --install 安">
-<meta property="og:updated_time" content="2017-06-02T14:23:51.000Z">
+<meta property="og:updated_time" content="2017-06-02T14:28:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS自动化发布工具fastlane">
 <meta name="twitter:description" content="fastlane初识   fastlane 是一个很棒的iOS和Andriod的一个自动化版本发布工具，它提供了一系列的插件用来解决打包发布上传应用市场这个过程一系列的问题。本教程将介绍如何通过fastlane来自动化上传一个应用到AppStore  fastlane环境搭建 在一切开始之前你需要确定你的电脑上有最新的Xcode命令行工具在终端输入：xcode-select --install 安">
@@ -501,9 +501,8 @@
 <li>重装 <code>sudo gem install -n /usr/local/bin fastlane</code></li>
 <li>如果无法识别fastlane 检查路径配置是否正确<br><br><code>export PATH=&quot;$HOME/.fastlane/bin:$PATH&quot;</code></li>
 <li>如果出错 Connection reset by peer - SSL_connect,请检查是否使用RVM ruby命令 <code>rvm list</code></li>
-<li>如果没有使用RVM ruby 请使用rvm ruby ,若没有请先安装</li>
+<li>如果没有使用RVM ruby 请使用rvm ruby ,若没有请先安装<br><code>rvm osx-ssl-certs update all</code><br><code>rvm reinstall ruby-2.3.1 --with-openssl-dir=/usr/local</code></li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">rvm osx-ssl-certs update all</div><div class="line">rvm reinstall ruby-2.3.1 --with-openssl-dir=/usr/local</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -649,7 +648,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
