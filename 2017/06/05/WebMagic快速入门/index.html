@@ -97,17 +97,10 @@
 <meta property="og:url" content="http://13fafa.cn/2017/06/05/WebMagic快速入门/index.html">
 <meta property="og:site_name" content="步迹足印">
 <meta property="og:description" content="webmagic 是一个优秀的java爬虫工具主要应用场景是对某些页面进行深度爬取。目前在github上已经有4515个Star，用作者的原话来说webmagic的目标是：做一个Java语言Web爬虫的教科书般的实现。本文是一篇快速入门简介，如您想深入了解请点击github上面webmagic仓库链接。  WebMagic的四大组件 Downloaderdownloader 负责从互联网上面下载">
-<meta property="og:image" content="http://i4.buimg.com/595348/7109b189c0c785e3.png">
-<meta property="og:image" content="http://i1.piimg.com/595348/eef1abbdf05d254b.png">
-<meta property="og:image" content="http://i1.piimg.com/595348/4afb2c080e427075.png">
-<meta property="og:image" content="http://i1.piimg.com/595348/812572a9a32b2d18.png">
-<meta property="og:image" content="http://i1.piimg.com/595348/fa2767538458a610.png">
-<meta property="og:image" content="http://i4.buimg.com/595348/50c6840fc5e079db.png">
-<meta property="og:updated_time" content="2017-06-05T12:07:57.000Z">
+<meta property="og:updated_time" content="2017-06-05T12:11:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="WebMagic快速入门">
 <meta name="twitter:description" content="webmagic 是一个优秀的java爬虫工具主要应用场景是对某些页面进行深度爬取。目前在github上已经有4515个Star，用作者的原话来说webmagic的目标是：做一个Java语言Web爬虫的教科书般的实现。本文是一篇快速入门简介，如您想深入了解请点击github上面webmagic仓库链接。  WebMagic的四大组件 Downloaderdownloader 负责从互联网上面下载">
-<meta name="twitter:image" content="http://i4.buimg.com/595348/7109b189c0c785e3.png">
 
 
 
@@ -409,64 +402,55 @@
 <blockquote>
 <p>Spider是爬虫启动的入口。在启动爬虫之前，我们需要使用一个PageProcessor创建一个Spider对象，然后使用run()进行启动，可设置开启的线程数和初始爬取的URL。同时也可以设置Spider的其他组件（Downloader、Scheduler、Pipeline）为我们自定义的实现。<a href="https://github.com/code4craft/webmagic/blob/master/webmagic-core/src/main/java/us/codecraft/webmagic/Spider.java" target="_blank" rel="external">Spider</a></p>
 </blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Spider.create(new TestPageProcessor()).addUrl(&quot;http://a.qidian.com/?	chanId=22&quot;).thread(5).run(); </div><div class="line"></div><div class="line">``` </div><div class="line"></div><div class="line">在这里我们设置开启5条线程，然后使用run()启动爬虫（run（） 会阻塞当前线程，start()或者runAsync()是异步启动不会阻塞当前线程），默认将爬取结果输出到控制台，如果我们想将结果保存到文件可以这样:</div></pre></td></tr></table></figure>
+<p>  Spider.create(new TestPageProcessor()).addUrl(“<a href="http://a.qidian.com/?" target="_blank" rel="external">http://a.qidian.com/?</a>    chanId=22”).addPipeline(new FilePipeline(“/Users/stone/    Desktop/“)).thread(5).run();</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"> </div><div class="line">3.  站点设置&lt;br&gt;</div><div class="line">   Site保存了你要爬取的站点信息，同样的你也可以对site进行一些设置。本次爬取就设置了超时时间1000，重试次数3次,休眠实现1000。[Site](https://github.com/code4craft/webmagic/blob/master/webmagic-core/src/main/java/us/codecraft/webmagic/Site.java)</div></pre></td></tr></table></figure>
+<p>private Site site = Site.me().setRetryTimes(3).setSleepTime(1000).setTimeOut(10000);</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">4. 设置抽取规则&lt;br&gt;</div><div class="line">	* WebMagic提供了一套接口用于页面信息的抽取</div><div class="line">	主要有Css选择器，XPtah，正则匹配这三种方法。另外提供了`get(),toString(),all(),match()`方法来获取抽取结果。[Selectable](https://github.com/code4craft/webmagic/blob/master/webmagic-core/src/main/java/us/codecraft/webmagic/selector/Selectable.java)</div><div class="line">	</div><div class="line">	* 对于列表页面我们需要抽取详情页面的链接添加到查找路径里面去：</div></pre></td></tr></table></figure>
+<p> page.addTargetRequests(page.getHtml().xpath(“//div[@class=’book-mid-info’]/h4/a”).links().regex(“^*./book.qidian.com/info/\d{1,}”).all());</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">![路径](http://i4.buimg.com/595348/7109b189c0c785e3.png)</div></pre></td></tr></table></figure>
+<p> xpath(“//div[@class=’book-mid-info’]/h4/a”)</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">上面这条语句使用了Xpath进行抽取，首先查找class是book-mid-info的div标签，然后再查找这个div标签下面的h4子标签，再查找h4标签的子标签a。最终获取a标签下面的所有链接。并对获取到的链接进行正则匹配，并获取所有查到的链接</div><div class="line"></div><div class="line"> * 详情页面书名抽取</div><div class="line">![BookName](http://i1.piimg.com/595348/eef1abbdf05d254b.png)</div><div class="line">我们使用Csss进行抽取，将获取到的书籍名称放到bookName标签里面。</div></pre></td></tr></table></figure>
+<p>  page.putField(“bookName”, page.getHtml().css(“div.book-info “).css(“h1”).css(“em”,”text”).toString());</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"> 上面这条语句使用Css选择器先选中class是book-info的div标签，再在选中结果里面查找div的h1子标签，再从h1子标签里面查找em标签。查到em标签后获取em标签的文本，最终将抽取到的结果转成字符串。</div><div class="line"></div><div class="line">* 详情页面作者名称抽取</div><div class="line"> ![author](http://i1.piimg.com/595348/4afb2c080e427075.png)</div><div class="line"> 我们使用css选择器和xpath结合的方式来抽取作者笔名然后将信息放到author标签里面。</div></pre></td></tr></table></figure>
+<p>  page.putField(“author”, page.getHtml().css(“div.book-info”).xpath(“h1/span/a/text()”).toString());</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">  与上面一样首先使用css选择器选择class是book-info的标签，然后再使用Xpath抽取此标签下面的span标签，span标签下面的a标签并且获取a标签的文本，将结果转换成功字符串。</div><div class="line"></div><div class="line">* 详情页面更新时间和简介的抽取	 </div><div class="line">更新时间的获取</div></pre></td></tr></table></figure>
+<p>  page.putField(“time”, page.getHtml().css(“div.book-state”).xpath(“li/div/p/em/text()”).toString());</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"> ![time](http://i1.piimg.com/595348/812572a9a32b2d18.png)</div><div class="line"></div><div class="line">书籍简介的获取</div></pre></td></tr></table></figure>
+<p>   page.putField(“detail”, page.getHtml().css(“div.book-intro”).css(“p”,”text”).toString());</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">	 ![detail](http://i1.piimg.com/595348/fa2767538458a610.png)</div><div class="line"></div><div class="line">	* 爬取结果</div><div class="line">	 ![result](http://i4.buimg.com/595348/50c6840fc5e079db.png)</div><div class="line">	 </div><div class="line">	 </div><div class="line">###  PipLine的定制</div><div class="line">   在实际生产我们一般需要把查询的结果先存储到一个对象中然后再处理这个对象(比如，将对象存储到数据库)</div><div class="line">   </div><div class="line">   * 将结果存储到对象&lt;br&gt;</div><div class="line">    我们对协议PageProcessor的接口process进行改写,很简单:</div></pre></td></tr></table></figure>
+<p>  @Override<br>  public void process(Page page) {</p>
+<pre><code>if(page.getRequest().getUrl().indexOf(&quot;book.qidian.com/info&quot;) != -1) {
+    //设置捕获规则
+    Book book = new Book();
+    book.setBookName(page.getHtml().css(&quot;div.book-info &quot;).css(&quot;h1&quot;).css(&quot;em&quot;,&quot;text&quot;).toString());
+    book.setAuthor(page.getHtml().css(&quot;div.book-info&quot;).xpath(&quot;h1/span/a/text()&quot;).toString());
+    book.setTime(page.getHtml().css(&quot;div.book-state&quot;).xpath(&quot;li/div/p/em/text()&quot;).toString());
+    book.setDetail(page.getHtml().css(&quot;div.book-intro&quot;).css(&quot;p&quot;,&quot;text&quot;).toString());
+    page.putField(&quot;book&quot;, book);
+}else {
+    //设置查找路径
+    page.addTargetRequests(page.getHtml().xpath(&quot;//div[@class=&apos;book-mid-info&apos;]/h4/a&quot;).links().regex(&quot;^*./book.qidian.com/info/\\d{1,}&quot;).all());
+}
+</code></pre><p>  }</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">先将捕获的信息存储到对象book中，通过putFidld函数将这个book对象存储到resultItems中。</div></pre></td></tr></table></figure>
 </li>
 </ol>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Spider.create(new TestPageProcessor()).addUrl(&quot;http://a.qidian.com/?chanId=22&quot;).thread(5).run();</div></pre></td></tr></table></figure>
-<p> 在这里我们设置开启5条线程，然后使用run()启动爬虫（run（） 会阻塞当前线程，start()或者runAsync()是异步启动不会阻塞当前线程），默认将爬取结果输出到控制台，如果我们想将结果保存到文件可以这样:<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">Spider.create(new TestPageProcessor()).addUrl(&quot;http://a.qidian.com/?chanId=22&quot;).addPipeline(new FilePipeline(&quot;/Users/stone/Desktop/&quot;)).thread(5).run();</div></pre></td></tr></table></figure></p>
-<ol>
-<li><p>站点设置<br><br>Site保存了你要爬取的站点信息，同样的你也可以对site进行一些设置。本次爬取就设置了超时时间1000，重试次数3次,休眠实现1000。<a href="https://github.com/code4craft/webmagic/blob/master/webmagic-core/src/main/java/us/codecraft/webmagic/Site.java" target="_blank" rel="external">Site</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">private Site site = Site.me().setRetryTimes(3).setSleepTime(1000).setTimeOut(10000);</div></pre></td></tr></table></figure>
-</li>
-<li><p>设置抽取规则<br></p>
-<ul>
-<li><p>WebMagic提供了一套接口用于页面信息的抽取<br>主要有Css选择器，XPtah，正则匹配这三种方法。另外提供了<code>get(),toString(),all(),match()</code>方法来获取抽取结果。<a href="https://github.com/code4craft/webmagic/blob/master/webmagic-core/src/main/java/us/codecraft/webmagic/selector/Selectable.java" target="_blank" rel="external">Selectable</a></p>
-</li>
-<li><p>对于列表页面我们需要抽取详情页面的链接添加到查找路径里面去：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">page.addTargetRequests(page.getHtml().xpath(&quot;//div[@class=&apos;book-mid-info&apos;]/h4/a&quot;).links().regex(&quot;^*./book.qidian.com/info/\\d&#123;1,&#125;&quot;).all());</div></pre></td></tr></table></figure>
-<p><img src="http://i4.buimg.com/595348/7109b189c0c785e3.png" alt="路径"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">xpath(&quot;//div[@class=&apos;book-mid-info&apos;]/h4/a&quot;)</div></pre></td></tr></table></figure>
-<p>上面这条语句使用了Xpath进行抽取，首先查找class是book-mid-info的div标签，然后再查找这个div标签下面的h4子标签，再查找h4标签的子标签a。最终获取a标签下面的所有链接。并对获取到的链接进行正则匹配，并获取所有查到的链接</p>
-<ul>
-<li>详情页面书名抽取<br><img src="http://i1.piimg.com/595348/eef1abbdf05d254b.png" alt="BookName"><br>我们使用Csss进行抽取，将获取到的书籍名称放到bookName标签里面。</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">page.putField(&quot;bookName&quot;, page.getHtml().css(&quot;div.book-info &quot;).css(&quot;h1&quot;).css(&quot;em&quot;,&quot;text&quot;).toString());</div></pre></td></tr></table></figure>
-<p>上面这条语句使用Css选择器先选中class是book-info的div标签，再在选中结果里面查找div的h1子标签，再从h1子标签里面查找em标签。查到em标签后获取em标签的文本，最终将抽取到的结果转成字符串。</p>
-</li>
-<li><p>详情页面作者名称抽取<br><img src="http://i1.piimg.com/595348/4afb2c080e427075.png" alt="author"><br>我们使用css选择器和xpath结合的方式来抽取作者笔名然后将信息放到author标签里面。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">page.putField(&quot;author&quot;, page.getHtml().css(&quot;div.book-info&quot;).xpath(&quot;h1/span/a/text()&quot;).toString());</div></pre></td></tr></table></figure>
-<p>与上面一样首先使用css选择器选择class是book-info的标签，然后再使用Xpath抽取此标签下面的span标签，span标签下面的a标签并且获取a标签的文本，将结果转换成功字符串。</p>
-</li>
-<li><p>详情页面更新时间和简介的抽取<br>更新时间的获取</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">page.putField(&quot;time&quot;, page.getHtml().css(&quot;div.book-state&quot;).xpath(&quot;li/div/p/em/text()&quot;).toString());</div></pre></td></tr></table></figure>
-<p><img src="http://i1.piimg.com/595348/812572a9a32b2d18.png" alt="time"></p>
-<p>书籍简介的获取</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">page.putField(&quot;detail&quot;, page.getHtml().css(&quot;div.book-intro&quot;).css(&quot;p&quot;,&quot;text&quot;).toString());</div></pre></td></tr></table></figure>
-<p><img src="http://i1.piimg.com/595348/fa2767538458a610.png" alt="detail"></p>
-</li>
-<li><p>爬取结果<br><img src="http://i4.buimg.com/595348/50c6840fc5e079db.png" alt="result"></p>
-</li>
-</ul>
-</li>
-</ol>
-<h3 id="PipLine的定制"><a href="#PipLine的定制" class="headerlink" title="PipLine的定制"></a>PipLine的定制</h3><p>   在实际生产我们一般需要把查询的结果先存储到一个对象中然后再处理这个对象(比如，将对象存储到数据库)</p>
-<ul>
-<li><p>将结果存储到对象<br><br>我们对协议PageProcessor的接口process进行改写,很简单:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">   @Override</div><div class="line">public void process(Page page) &#123;</div><div class="line"> </div><div class="line"> if(page.getRequest().getUrl().indexOf(&quot;book.qidian.com/info&quot;) != -1) &#123;</div><div class="line">	 //设置捕获规则</div><div class="line">	 Book book = new Book();</div><div class="line">	 book.setBookName(page.getHtml().css(&quot;div.book-info &quot;).css(&quot;h1&quot;).css(&quot;em&quot;,&quot;text&quot;).toString());</div><div class="line">	 book.setAuthor(page.getHtml().css(&quot;div.book-info&quot;).xpath(&quot;h1/span/a/text()&quot;).toString());</div><div class="line">	 book.setTime(page.getHtml().css(&quot;div.book-state&quot;).xpath(&quot;li/div/p/em/text()&quot;).toString());</div><div class="line">	 book.setDetail(page.getHtml().css(&quot;div.book-intro&quot;).css(&quot;p&quot;,&quot;text&quot;).toString());</div><div class="line">	 page.putField(&quot;book&quot;, book);</div><div class="line"> &#125;else &#123;</div><div class="line">	 //设置查找路径</div><div class="line">	 page.addTargetRequests(page.getHtml().xpath(&quot;//div[@class=&apos;book-mid-info&apos;]/h4/a&quot;).links().regex(&quot;^*./book.qidian.com/info/\\d&#123;1,&#125;&quot;).all());</div><div class="line"> &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>先将捕获的信息存储到对象book中，通过putFidld函数将这个book对象存储到resultItems中。</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"> public void putField(String key, Object field) &#123;</div><div class="line">    resultItems.put(key, field);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ul>
-<li>从BookPipline里面获取对象</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">   public class BookPipline implements Pipeline &#123;</div><div class="line">	@Override</div><div class="line">	public void process(ResultItems resultItems, Task task) &#123;</div><div class="line">		</div><div class="line">		Book book = (Book)resultItems.get(&quot;book&quot;);</div><div class="line">		if (book != null) &#123;</div><div class="line">			System.out.println(&quot;这些信息可存数据库-&gt;&quot;+book.descript());</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>从resultItems里面通过key值book可以直接获取到在PageProcess接口里面存储的对象。</p>
-<ul>
-<li><p>使用自定义的信息处理模块BookPipline</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Spider.create(new TestPageProcessor()).addUrl(&quot;http://a.qidian.com/?chanId=22&quot;).addPipeline(new BookPipline()).thread(5).run();</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-<pre><code>在启动爬虫时可以直接使用我们定制的处理模块
+<pre><code>    public void putField(String key, Object field) {
+    resultItems.put(key, field);
+}
+</code></pre>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">* 从BookPipline里面获取对象</div></pre></td></tr></table></figure>
+<p>   public class BookPipline implements Pipeline {<br>    @Override<br>    public void process(ResultItems resultItems, Task task) {</p>
+<pre><code>    Book book = (Book)resultItems.get(&quot;book&quot;);
+    if (book != null) {
+        System.out.println(&quot;这些信息可存数据库-&gt;&quot;+book.descript());
+    }
+}
+</code></pre><p>}<br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"> 从resultItems里面通过key值book可以直接获取到在PageProcess接口里面存储的对象。</div><div class="line"> </div><div class="line">* 使用自定义的信息处理模块BookPipline</div></pre></td></tr></table></figure></p>
+<pre><code>  Spider.create(new TestPageProcessor()).addUrl(&quot;http://a.qidian.com/?chanId=22&quot;).addPipeline(new BookPipline()).thread(5).run();
+  ```
+
+在启动爬虫时可以直接使用我们定制的处理模块
 ![bookPipline](http://i4.buimg.com/595348/df050f502b0126d7.png)
 </code></pre><h3 id="注解的使用"><a href="#注解的使用" class="headerlink" title="注解的使用"></a>注解的使用</h3><p>   webmagic除了上面的这种方式还可以提供了注解使用方式，两种方法各有优劣如果业务简单可以使用注解，感兴趣的可以点击<a href="http://webmagic.io/docs/zh/posts/ch5-annotation/" target="_blank" rel="external">注解</a>来了解使用方法。</p>
 
@@ -673,7 +657,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#WebMagic的四大组件"><span class="nav-number">1.</span> <span class="nav-text">WebMagic的四大组件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WebMagic的使用"><span class="nav-number">2.</span> <span class="nav-text">WebMagic的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#添加依赖"><span class="nav-number">2.1.</span> <span class="nav-text">添加依赖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一个WebMagic的小demo"><span class="nav-number">2.2.</span> <span class="nav-text">一个WebMagic的小demo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PipLine的定制"><span class="nav-number">2.3.</span> <span class="nav-text">PipLine的定制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注解的使用"><span class="nav-number">2.4.</span> <span class="nav-text">注解的使用</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#WebMagic的四大组件"><span class="nav-number">1.</span> <span class="nav-text">WebMagic的四大组件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WebMagic的使用"><span class="nav-number">2.</span> <span class="nav-text">WebMagic的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#添加依赖"><span class="nav-number">2.1.</span> <span class="nav-text">添加依赖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一个WebMagic的小demo"><span class="nav-number">2.2.</span> <span class="nav-text">一个WebMagic的小demo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注解的使用"><span class="nav-number">2.3.</span> <span class="nav-text">注解的使用</span></a></li></ol></li></ol></div>
             
 
           </div>
