@@ -1,0 +1,1218 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="iOS," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="fastlane初识   fastlane 是一个很棒的iOS和Andriod的一个自动化版本发布工具，它提供了一系列的插件用来解决打包发布上传应用市场这个过程一系列的问题。本教程将介绍如何通过fastlane来自动化上传一个应用到AppStore  fastlane环境搭建 在一切开始之前你需要确定你的电脑上有最新的Xcode命令行工具在终端输入：xcode-select --install 安">
+<meta name="keywords" content="iOS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS自动化发布工具fastlane">
+<meta property="og:url" content="http://13fafa.cn/2017/05/19/iOS自动化发布工具fastlane/index.html">
+<meta property="og:site_name" content="步迹足印">
+<meta property="og:description" content="fastlane初识   fastlane 是一个很棒的iOS和Andriod的一个自动化版本发布工具，它提供了一系列的插件用来解决打包发布上传应用市场这个过程一系列的问题。本教程将介绍如何通过fastlane来自动化上传一个应用到AppStore  fastlane环境搭建 在一切开始之前你需要确定你的电脑上有最新的Xcode命令行工具在终端输入：xcode-select --install 安">
+<meta property="og:updated_time" content="2017-06-02T14:28:40.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iOS自动化发布工具fastlane">
+<meta name="twitter:description" content="fastlane初识   fastlane 是一个很棒的iOS和Andriod的一个自动化版本发布工具，它提供了一系列的插件用来解决打包发布上传应用市场这个过程一系列的问题。本教程将介绍如何通过fastlane来自动化上传一个应用到AppStore  fastlane环境搭建 在一切开始之前你需要确定你的电脑上有最新的Xcode命令行工具在终端输入：xcode-select --install 安">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://13fafa.cn/2017/05/19/iOS自动化发布工具fastlane/"/>
+
+
+
+
+
+  <title>iOS自动化发布工具fastlane | 步迹足印</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=62246698";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">步迹足印</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">一步一迹</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://13fafa.cn/2017/05/19/iOS自动化发布工具fastlane/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="叶亚冬">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://www.wsfjq.com/photos/bd16006992.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="步迹足印">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">iOS自动化发布工具fastlane</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-19T22:46:32+08:00">
+                2017-05-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a class="cloud-tie-join-count" href="/2017/05/19/iOS自动化发布工具fastlane/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count join-count" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="fastlane初识"><a href="#fastlane初识" class="headerlink" title="fastlane初识"></a>fastlane初识</h1><blockquote>
+<p>  fastlane 是一个很棒的iOS和Andriod的一个自动化版本发布工具，它提供了一系列的插件用来解决打包发布上传应用市场这个过程一系列的问题。本教程将介绍如何通过fastlane来自动化上传一个应用到AppStore</p>
+</blockquote>
+<h1 id="fastlane环境搭建"><a href="#fastlane环境搭建" class="headerlink" title="fastlane环境搭建"></a>fastlane环境搭建</h1><ol>
+<li>在一切开始之前你需要确定你的电脑上有最新的Xcode命令行工具在终端输入：<br><br><code>xcode-select --install</code></li>
+<li>安装fastlane:<br>你有三种方式在你的电脑上安装fastlane<ul>
+<li>使用命令行<code>brew cask install fastlane</code> 通过homewbrew软件包管理器安装</li>
+<li>使用命令行<code>sudo gem install fastlane -NV</code> 通过gem安装</li>
+<li>如果你使用上面的命令行安装出错了，那么你可以直接点击<a href="https://download.fastlane.tools/" target="_blank" rel="external">连接</a>下载安装包来安装fastlane</li>
+</ul>
+</li>
+<li>初始化:<br>进入你app的根目录下执行命令行 <code>fastlane init</code> </li>
+</ol>
+<p>至此你将可以通过fastlane来管理你项目的发布过程。</p>
+<h1 id="fastlane的常用插件"><a href="#fastlane的常用插件" class="headerlink" title="fastlane的常用插件"></a>fastlane的常用插件</h1><h2 id="produce"><a href="#produce" class="headerlink" title="produce"></a>produce</h2><blockquote>
+<p>Creates the given application on iTC and the Dev Portal if necessary<br><br>produce插件是用来在iTunes Connect里面创建你自己的应用的（如果有则不创建）</p>
+</blockquote>
+<p>procuce有很多可选参数，下面简单介绍几个:<br></p>
+<ul>
+<li>username 用户名，这个就是你的appid账号</li>
+<li>team_id 团队id，这个是你所在团队的id</li>
+<li>app_identifier 你应用的唯一标识符,可以填bundle Id</li>
+<li>app_name 你应用的名称</li>
+<li>language 应用支持的语言，简体中文：Simplified Chinese</li>
+<li>app_version app的版本号 1.0</li>
+<li>sku 套装id，简单点直接写bundle Id</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">lane :createApp do |options|</div><div class="line">	 produce(</div><div class="line">      username: options[:username], </div><div class="line">      team_id: options[:teamid], </div><div class="line">      app_identifier: options[:appidentifier], </div><div class="line">      app_name: options[:appname], </div><div class="line">      language: &quot;Simplified Chinese&quot;,</div><div class="line">      app_version: &quot;1.0&quot;, </div><div class="line">      sku: options[:appidentifier]</div><div class="line">    )</div><div class="line">end</div></pre></td></tr></table></figure>
+<p><em>我们可以使用lane 定义一个代码块用来封装我们需要的功能，同时可以使用options来配置参数</em></p>
+<p>更多可用参数请点击这里<a href="https://docs.fastlane.tools/actions/" target="_blank" rel="external">More</a></p>
+<h2 id="cert"><a href="#cert" class="headerlink" title="cert"></a>cert</h2><blockquote>
+<p> Fetch or generate the latest available code signing identity<br><br> cret插件可以用来获取最新的代码签名证书,官方推荐配合match插件使用（如果你需要进行团队合作）</p>
+</blockquote>
+<p>介绍几个cert的可选参数:<br></p>
+<ul>
+<li>username 用户名，你的苹果开发者账号</li>
+<li>team_id 团队的Id</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">cert(  </div><div class="line">     username: options[:username],</div><div class="line">     team_id: options[:teamid] </div><div class="line">   )</div></pre></td></tr></table></figure>
+<p>更多可用的参数请点击这里<a href="https://docs.fastlane.tools/actions/" target="_blank" rel="external">More</a></p>
+<h2 id="pem"><a href="#pem" class="headerlink" title="pem"></a>pem</h2><blockquote>
+<p>Makes sure a valid push profile is active and creates a new one if needed<br><br>pem 插件是用来创建iOS推送证书的，它会先确定是否有一个可用的推送证书如果有需要会创建一个新的推送证书</p>
+</blockquote>
+<p>可选参数:<br></p>
+<ul>
+<li>username 用户名，就是你的开发者账号</li>
+<li>team_id 团队的Id</li>
+<li>p12_password 用于p12文件的密码</li>
+<li>generate_p12 创建一个p12文件</li>
+<li>output_path 导出的证书钥匙串等的存放目录</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">pem(</div><div class="line">    username: options[:username],</div><div class="line">    team_id: options[:teamid],</div><div class="line">    p12_password: &quot;12345678&quot;,</div><div class="line">    app_identifier: options[:appidentifier],</div><div class="line">    generate_p12: true,</div><div class="line">    output_path: &quot;../#&#123;options[:appname]&#125;/&quot;</div><div class="line">  )</div></pre></td></tr></table></figure>
+<p>更多可用的参数请点击这里<a href="https://docs.fastlane.tools/actions/" target="_blank" rel="external">More</a></p>
+<h2 id="sigh"><a href="#sigh" class="headerlink" title="sigh"></a>sigh</h2><blockquote>
+<p>Generates a provisioning profile. Stores the profile in the current folder .<br><br>sigh 是用来创建配置文件provisioning的<br><br>如果需要进行团队合作建议配合match插件使用sigh</p>
+</blockquote>
+<p>可选参数:<br></p>
+<ul>
+<li>force 是否更新配置文件</li>
+<li>app_identifier app的唯一标识符 bundleId id</li>
+<li>username 用户名，你的苹果开发者账号</li>
+<li>team_id 团队的Id</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">sigh(</div><div class="line">     force: true, </div><div class="line">     username: options[:username], </div><div class="line">     team_id: options[:teamid], </div><div class="line">     app_identifier: options[:appidentifier]</div><div class="line">   )</div></pre></td></tr></table></figure>
+<p>更多可用的参数请点击这里<a href="https://docs.fastlane.tools/actions/" target="_blank" rel="external">More</a></p>
+<h2 id="gym"><a href="#gym" class="headerlink" title="gym"></a>gym</h2><blockquote>
+<p>Easily build and sign your app using gym<br><br>gym插件可以对你的项目进行编译打包并且进行签名</p>
+</blockquote>
+<p>可用的参数:<br></p>
+<ul>
+<li>scheme 待编译工程的schem，可以使用命令行<code>xcodebuild -list</code>来获取可用的schem值</li>
+<li>clean 是否在编译之前清理工程</li>
+<li>silent 是否隐藏不必要信息</li>
+<li>output_directory 编译好的ipa包的存放目录</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">gym(</div><div class="line"> silent: true, </div><div class="line"> clean: true</div><div class="line"> )</div></pre></td></tr></table></figure>
+<p>更多可用的参数请点击这里<a href="https://docs.fastlane.tools/actions/" target="_blank" rel="external">More</a></p>
+<h2 id="snapshot"><a href="#snapshot" class="headerlink" title="snapshot"></a>snapshot</h2><blockquote>
+<p>Generate new localised screenshots on multiple devices<br><br>自动截图工具，可以对应用截图自动生成iTunes Connect需要的预览图片</p>
+</blockquote>
+<p>可用参数:</p>
+<ul>
+<li>devices 截图时使用的机器</li>
+<li>languages 使用的语言</li>
+<li>output_directory 生成图片的导出目录</li>
+</ul>
+<p>当然了，你可以使用命令<code>fastlane snapshot init</code> 来自动生成截图需要的配置，在自动生成的Snapfile文件里面会有一些提供好的参数可供选择</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">desc &quot;snapshot&quot;</div><div class="line"> lane :shot do</div><div class="line">   snapshot</div><div class="line"> end</div></pre></td></tr></table></figure>
+<p>截图插件的详细使用方式请点击<a href="https://docs.fastlane.tools/getting-started/ios/screenshots/#capture-screenshots-automatically" target="_blank" rel="external">这里</a></p>
+<p>更多可用的参数请点击这里<a href="https://docs.fastlane.tools/actions/" target="_blank" rel="external">More</a></p>
+<h2 id="deliver"><a href="#deliver" class="headerlink" title="deliver"></a>deliver</h2><blockquote>
+<p>Uses deliver to upload new app metadata and builds to iTunes Connect<br><br>上传ipa包到iTunes Connect</p>
+</blockquote>
+<p>可用的参数:<br></p>
+<ul>
+<li>app_identifier 应用的bundle id</li>
+<li>username 开发者账号</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">deliver(</div><div class="line">   app_identifier: options[:appidentifier], </div><div class="line">   username: options[:username] </div><div class="line">   )</div></pre></td></tr></table></figure>
+<p>更多可用的参数请点击这里<a href="https://docs.fastlane.tools/actions/" target="_blank" rel="external">More</a></p>
+<h1 id="fastlane-buildupload"><a href="#fastlane-buildupload" class="headerlink" title="fastlane buildupload"></a>fastlane buildupload</h1><p>这里提供一个可用的demo来对工程进行自动化打包上传</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">desc &quot;build your application to an ipa and upload the ipa&quot;</div><div class="line">desc &quot;if you want upload an ipa to itunes Connect ,please use command line : fastlane buildupload&quot;</div><div class="line"> lane :buildupload do |options|</div><div class="line">   produce(</div><div class="line">     username: options[:username],</div><div class="line">     team_id: options[:teamid], </div><div class="line">     app_identifier: options[:appidentifier],</div><div class="line">     app_name: options[:appname], </div><div class="line">     language: &quot;Simplified Chinese&quot;, </div><div class="line">     app_version: &quot;1.0&quot;, </div><div class="line">     sku: options[:appidentifier],</div><div class="line">   )</div><div class="line">   cert(  </div><div class="line">     username: options[:username], </div><div class="line">     team_id: options[:teamid] </div><div class="line">   )</div><div class="line">   pem(</div><div class="line">     username: options[:username], </div><div class="line">     team_id: options[:teamid], </div><div class="line">     p12_password: &quot;12345678&quot;,</div><div class="line">     app_identifier: options[:appidentifier],</div><div class="line">     generate_p12: true,</div><div class="line">     output_path: &quot;../#&#123;options[:appname]&#125;/&quot;</div><div class="line">   )</div><div class="line">   sigh(</div><div class="line">     force: true, </div><div class="line">     username: options[:username], #</div><div class="line">     team_id: options[:teamid],</div><div class="line">     app_identifier: options[:appidentifier]</div><div class="line">   )</div><div class="line">   clear_derived_data</div><div class="line">   gym(</div><div class="line">     silent: true, </div><div class="line">     clean: true) </div><div class="line">   deliver(</div><div class="line">     app_identifier: options[:appidentifier], </div><div class="line">     username: options[:username]</div><div class="line">     )</div><div class="line"> end</div></pre></td></tr></table></figure>
+<p>调用命令：<br><code>fastlane buildupload 参数1 参数2 参数3 ...</code></p>
+<h1 id="使用shell修改工程配置"><a href="#使用shell修改工程配置" class="headerlink" title="使用shell修改工程配置"></a>使用shell修改工程配置</h1><blockquote>
+<p>在很多情况下我们使用自动化打包工具都是需要批量处理很多工程编译出不同的IPA包的，这就需要我们在使用fastlane之前先修改一些工程的配置</p>
+</blockquote>
+<ul>
+<li>从svn或者git等仓库里面checkout 代码</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">rm -rf deploy</div><div class="line">svn co svn://xxx/xxx/xxx/xxx deploy</div></pre></td></tr></table></figure>
+<ul>
+<li>从文件里面读取配置信息到数组如:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">i=0</div><div class="line">for s in  `cat params/appname.txt`</div><div class="line">do</div><div class="line">	appnames[$&#123;i&#125;]=$&#123;s&#125;</div><div class="line">	i=$&#123;i&#125;+1	</div><div class="line">done</div></pre></td></tr></table></figure>
+<p>appname.txt文件里面一行写一个app的名字，有几个app就写几行<br>其他的诸如bundle id ，username 等信息类似</p>
+<ul>
+<li>修改应用的bundle Id <code>sed -i &#39;&#39; &quot;s/com.xxx.xxx/$1/g&quot; xxx.xcodeproj/project.pbxproj</code> $1，参数一是新的bundle id</li>
+<li>修改应用名称 <code>/usr/libexec/PlistBuddy -c &quot;Set :CFBundleDisplayName $2&quot; Jubaodai/Info.plist</code> $2是新的应用名称</li>
+<li>修改应用的icons图片 <code>cp -r ../pictures/$2/AppIcon.appiconset/. xxx/Assets.xcassets/AppIcon.appiconset</code></li>
+<li>修改fastlane 元数据里面的应用名称 <code>echo newAppName &gt; fastlane/metadata/zh-Hans/name.txt</code></li>
+<li>修改fastlane 里面上传iTunes Connect 的icon图片 <code>cp ../pictures/$1/app_icon.jpg fastlane/metadata/app_icon.jpg</code></li>
+<li>调用fastlane 进行自动打包 <code>fastlane buildupload username:${usernames[${i}]} teamid:${teamids[${i}]} appidentifier:${appidentifiers[${i}]} appname:${appnames[${i}]}</code></li>
+</ul>
+<h1 id="后续"><a href="#后续" class="headerlink" title="后续"></a>后续</h1><p>本人开始是使用zip压缩包安装的后来发现无法继续往上升级了，踩了很多坑才升级到新版本了，具体的就不多加赘述只记录几个知识点:</p>
+<ol>
+<li>卸载 <code>sudo gem uninstall fastlane</code></li>
+<li>删除 <code>rm -rf ~/.fastlane</code></li>
+<li>重装 <code>sudo gem install -n /usr/local/bin fastlane</code></li>
+<li>如果无法识别fastlane 检查路径配置是否正确<br><br><code>export PATH=&quot;$HOME/.fastlane/bin:$PATH&quot;</code></li>
+<li>如果出错 Connection reset by peer - SSL_connect,请检查是否使用RVM ruby命令 <code>rvm list</code></li>
+<li>如果没有使用RVM ruby 请使用rvm ruby ,若没有请先安装<br><code>rvm osx-ssl-certs update all</code><br><code>rvm reinstall ruby-2.3.1 --with-openssl-dir=/usr/local</code></li>
+</ol>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="http://chuantu.biz/t5/91/1495284458x2890174315.png" alt="叶亚冬 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="http://chuantu.biz/t5/91/1495284526x2890173759.png" alt="叶亚冬 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/iOS/" rel="tag"># iOS</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/20/AppStore账号申请/" rel="prev" title="AppStore账号申请">
+                AppStore账号申请 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://www.wsfjq.com/photos/bd16006992.jpg"
+               alt="叶亚冬" />
+          <p class="site-author-name" itemprop="name">叶亚冬</p>
+           
+              <p class="site-description motion-element" itemprop="description">步迹勾勒了你的过去，指向着你的未来！</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/mayflight" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#fastlane初识"><span class="nav-number">1.</span> <span class="nav-text">fastlane初识</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#fastlane环境搭建"><span class="nav-number">2.</span> <span class="nav-text">fastlane环境搭建</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#fastlane的常用插件"><span class="nav-number">3.</span> <span class="nav-text">fastlane的常用插件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#produce"><span class="nav-number">3.1.</span> <span class="nav-text">produce</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cert"><span class="nav-number">3.2.</span> <span class="nav-text">cert</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pem"><span class="nav-number">3.3.</span> <span class="nav-text">pem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sigh"><span class="nav-number">3.4.</span> <span class="nav-text">sigh</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gym"><span class="nav-number">3.5.</span> <span class="nav-text">gym</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#snapshot"><span class="nav-number">3.6.</span> <span class="nav-text">snapshot</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#deliver"><span class="nav-number">3.7.</span> <span class="nav-text">deliver</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#fastlane-buildupload"><span class="nav-number">4.</span> <span class="nav-text">fastlane buildupload</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用shell修改工程配置"><span class="nav-number">5.</span> <span class="nav-text">使用shell修改工程配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#后续"><span class="nav-number">6.</span> <span class="nav-text">后续</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">叶亚冬</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+    
+    <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",
+        productKey: "2b3439a1b6704b0e97c685bdb69ace49",
+        target: "cloud-tie-wrapper"
+      };
+    </script>
+    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (search_path.endsWith("json")) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
