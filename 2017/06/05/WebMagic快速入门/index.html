@@ -97,7 +97,7 @@
 <meta property="og:url" content="http://13fafa.cn/2017/06/05/WebMagic快速入门/index.html">
 <meta property="og:site_name" content="步迹足印">
 <meta property="og:description" content="webmagic 是一个优秀的java爬虫工具主要应用场景是对某些页面进行深度爬取。目前在github上已经有4515个Star，用作者的原话来说webmagic的目标是：做一个Java语言Web爬虫的教科书般的实现。本文是一篇快速入门简介，如您想深入了解请点击github上面webmagic仓库链接。  WebMagic的四大组件 Downloaderdownloader 负责从互联网上面下载">
-<meta property="og:updated_time" content="2017-06-06T14:01:52.000Z">
+<meta property="og:updated_time" content="2017-06-06T14:02:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="WebMagic快速入门">
 <meta name="twitter:description" content="webmagic 是一个优秀的java爬虫工具主要应用场景是对某些页面进行深度爬取。目前在github上已经有4515个Star，用作者的原话来说webmagic的目标是：做一个Java语言Web爬虫的教科书般的实现。本文是一篇快速入门简介，如您想深入了解请点击github上面webmagic仓库链接。  WebMagic的四大组件 Downloaderdownloader 负责从互联网上面下载">
@@ -399,7 +399,7 @@
 </ul>
 </li>
 <li><p>爬虫设置<br><br>Spider是爬虫启动的入口。在启动爬虫之前，我们需要使用一个PageProcessor创建一个Spider对象，然后使用run()进行启动，可设置开启的线程数和初始爬取的URL。同时也可以设置Spider的其他组件（Downloader、Scheduler、Pipeline）为我们自定义的实现<br><a href="https://github.com/code4craft/webmagic/blob/master/webmagic-core/src/main/java/us/codecraft/webmagic/Spider.java" target="_blank" rel="external">Spider</a>。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Spider.create(new TestPageProcessor()).addUrl(&quot;http://a.qidian.com/?	chanId=22&quot;).thread(5).run(); </div><div class="line">``` </div><div class="line"></div><div class="line">在这里我们设置开启5条线程，然后使用run()启动爬虫（run（） 会阻塞当前线程，start()或者runAsync()是异步启动不会阻塞当前线程），默认将爬取结果输出到控制台，如果我们想将结果保存到文件可以这样:</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"> Spider.create(new TestPageProcessor()).addUrl(&quot;http://a.qidian.com/?	chanId=22&quot;).thread(5).run(); </div><div class="line"> ``` </div><div class="line"> </div><div class="line">在这里我们设置开启5条线程，然后使用run()启动爬虫（run（） 会阻塞当前线程，start()或者runAsync()是异步启动不会阻塞当前线程），默认将爬取结果输出到控制台，如果我们想将结果保存到文件可以这样:</div></pre></td></tr></table></figure>
 <p>  Spider.create(new TestPageProcessor()).addUrl(“<a href="http://a.qidian.com/?" target="_blank" rel="external">http://a.qidian.com/?</a>    chanId=22”).addPipeline(new FilePipeline(“/Users/stone/    Desktop/“)).thread(5).run();</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">3.  站点设置&lt;br&gt;</div><div class="line">  	*Site保存了你要爬取的站点信息，同样的你也可以对site进行一些设置。本次爬取就设置了超时时间1000，重试次数3次,休眠实现1000。[Site](https://github.com/code4craft/webmagic/blob/master/webmagic-core/src/main/java/us/codecraft/webmagic/Site.java)*</div></pre></td></tr></table></figure>
 <p> private Site site = Site.me().setRetryTimes(3).setSleepTime(1000).setTimeOut(10000);</p>
