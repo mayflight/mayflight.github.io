@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="iOS," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -90,17 +90,16 @@
 
 
 
-<meta name="description" content="iOS10苹果开放了语音识别接口，这让我们可以自己自由的把音频转为文本了。iOS的语音识别主要分为识别音频文件和识别音频缓存（按我的理解就是识别音频输入流达到实时转换的效果）。因为iOS10对权限的要求更严格了所以在一切的工作之前我们要在info.plist文件里面增加两个节点。第一个节点： 1key: Privacy - Speech Recognition Usage Description">
-<meta name="keywords" content="iOS">
+<meta name="description" content="以前做过文件加密方面的工作，记录一下代码。  定义加密和解密的接口.h文件 123456#import &amp;lt;Foundation/Foundation.h&amp;gt;#import &amp;lt;CommonCrypto/CommonCrypto.h&amp;gt;@interface NSData (Encrypt)- (NSData *)encryptWith:(NSString *)key;- (NSD">
 <meta property="og:type" content="article">
-<meta property="og:title" content="iOS10语音识别">
-<meta property="og:url" content="http://13fafa.cn/2017/05/21/iOS10语音识别/index.html">
+<meta property="og:title" content="iOS加密CCCrypt">
+<meta property="og:url" content="http://13fafa.cn/2017/06/07/iOS加盟/index.html">
 <meta property="og:site_name" content="步迹足印">
-<meta property="og:description" content="iOS10苹果开放了语音识别接口，这让我们可以自己自由的把音频转为文本了。iOS的语音识别主要分为识别音频文件和识别音频缓存（按我的理解就是识别音频输入流达到实时转换的效果）。因为iOS10对权限的要求更严格了所以在一切的工作之前我们要在info.plist文件里面增加两个节点。第一个节点： 1key: Privacy - Speech Recognition Usage Description">
-<meta property="og:updated_time" content="2017-05-21T04:07:10.000Z">
+<meta property="og:description" content="以前做过文件加密方面的工作，记录一下代码。  定义加密和解密的接口.h文件 123456#import &amp;lt;Foundation/Foundation.h&amp;gt;#import &amp;lt;CommonCrypto/CommonCrypto.h&amp;gt;@interface NSData (Encrypt)- (NSData *)encryptWith:(NSString *)key;- (NSD">
+<meta property="og:updated_time" content="2017-06-07T13:29:56.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="iOS10语音识别">
-<meta name="twitter:description" content="iOS10苹果开放了语音识别接口，这让我们可以自己自由的把音频转为文本了。iOS的语音识别主要分为识别音频文件和识别音频缓存（按我的理解就是识别音频输入流达到实时转换的效果）。因为iOS10对权限的要求更严格了所以在一切的工作之前我们要在info.plist文件里面增加两个节点。第一个节点： 1key: Privacy - Speech Recognition Usage Description">
+<meta name="twitter:title" content="iOS加密CCCrypt">
+<meta name="twitter:description" content="以前做过文件加密方面的工作，记录一下代码。  定义加密和解密的接口.h文件 123456#import &amp;lt;Foundation/Foundation.h&amp;gt;#import &amp;lt;CommonCrypto/CommonCrypto.h&amp;gt;@interface NSData (Encrypt)- (NSData *)encryptWith:(NSString *)key;- (NSD">
 
 
 
@@ -128,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://13fafa.cn/2017/05/21/iOS10语音识别/"/>
+  <link rel="canonical" href="http://13fafa.cn/2017/06/07/iOS加盟/"/>
 
 
 
 
 
-  <title>iOS10语音识别 | 步迹足印</title>
+  <title>iOS加密CCCrypt | 步迹足印</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -297,7 +296,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://13fafa.cn/2017/05/21/iOS10语音识别/">
+    <link itemprop="mainEntityOfPage" href="http://13fafa.cn/2017/06/07/iOS加盟/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="叶亚冬">
@@ -314,7 +313,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">iOS10语音识别</h1>
+          <h1 class="post-title" itemprop="name headline">iOS加密CCCrypt</h1>
         
 
         <div class="post-meta">
@@ -326,8 +325,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-21T12:06:33+08:00">
-                2017-05-21
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-07T21:24:36+08:00">
+                2017-06-07
               </time>
             
 
@@ -345,7 +344,7 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a class="cloud-tie-join-count" href="/2017/05/21/iOS10语音识别/#comments" itemprop="discussionUrl">
+                <a class="cloud-tie-join-count" href="/2017/06/07/iOS加盟/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count join-count" itemprop="commentCount"></span>
                 </a>
               </span>
@@ -371,24 +370,13 @@
       
 
       
-        <p>iOS10苹果开放了语音识别接口，这让我们可以自己自由的把音频转为文本了。iOS的语音识别主要分为识别音频文件和识别音频缓存（按我的理解就是识别音频输入流达到实时转换的效果）。<br>因为iOS10对权限的要求更严格了所以在一切的工作之前我们要在info.plist文件里面增加两个节点。第一个节点：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">key: Privacy - Speech Recognition Usage Description     value:语音识别（这个值可以自定义，需要你描述Speech Recognition的用法）</div></pre></td></tr></table></figure>
-<p>第二个节点：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">key: Privacy - Microphone Usage Description     value:麦克风（这个值也是自定义的，同样是用来描述Microphone的用法的）</div></pre></td></tr></table></figure>
-<p>下面我们看看怎么识别音频文件：<br>首先我们要请求权限，<br><code>+ (void)requestAuthorization:(void(^)(SFSpeechRecognizerAuthorizationStatus status))handler</code><br>这个方法是SFSpeechRecognizer的类方法，SFSpeechRecognizerAuthorizationStatus是个枚举类型表示请求权限的结果，只有当status的值是SFSpeechRecognizerAuthorizationStatusAuthorized时才表示有使用语音识别的权限，增枚举类型的其他三个成员值分别是：<br>用户未决定SFSpeechRecognizerAuthorizationStatusNotDetermined、<br>拒绝SFSpeechRecognizerAuthorizationStatusDenied、<br>不支持SFSpeechRecognizerAuthorizationStatusRestricted<br>看代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">//请求权限</div><div class="line">   [SFSpeechRecognizer requestAuthorization:^(SFSpeechRecognizerAuthorizationStatus status) &#123;</div><div class="line">       if (status == SFSpeechRecognizerAuthorizationStatusAuthorized) &#123;</div><div class="line">           NSURL *url = [[NSBundle mainBundle] URLForResource:@&quot;speech&quot; withExtension:@&quot;m4a&quot;];</div><div class="line">           [self recognizeAudioFile:url];</div><div class="line">       &#125;</div><div class="line">   &#125;];</div></pre></td></tr></table></figure>
-<p>然后我们再看具体的怎么进行语音识别：<br>SFSpeechRecognizer这个类是具体用来进行语音识别的，默认初始化方法init表示识别本地语言环境，就是说如果你手机是中文那么你说中文就可以直接识别了。当然了如果我们想指定识别某种语言就要使用：<code>- (nullable instancetype)initWithLocale:(NSLocale *)locale</code> 这个方法进行初始化了。<br>然后我们再创建一个SFSpeechURLRecognitionRequest类的实例，这个实例包含了音频信息。最后再调用SFSpeechRecognizer实例的</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- (SFSpeechRecognitionTask *)recognitionTaskWithRequest:(SFSpeechRecognitionRequest *)request</div><div class="line">                                          resultHandler:(void (^)(SFSpeechRecognitionResult * __nullable result, NSError * __nullable error))resultHandler;</div></pre></td></tr></table></figure>
-<p>方法，将音频信息传给苹果的服务器然后，苹果会直接返回转换后的信息。直接看代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">SFSpeechRecognizer *recongize = [[SFSpeechRecognizer alloc] init];</div><div class="line">   SFSpeechURLRecognitionRequest *request = [[SFSpeechURLRecognitionRequest alloc] initWithURL:url];</div><div class="line">   [recongize recognitionTaskWithRequest:request resultHandler:^(SFSpeechRecognitionResult * _Nullable result, NSError * _Nullable error) &#123;</div><div class="line">       if (result) &#123;</div><div class="line">           self.speechText.text = result.bestTranscription.formattedString;</div><div class="line">       &#125;</div><div class="line">       if (error) &#123;</div><div class="line">           self.speechText.text = error.description;</div><div class="line">       &#125;</div><div class="line">   &#125;];</div></pre></td></tr></table></figure>
-<p>到此为止已经完成了音频文件的识别了。下面我们再说说怎样实时识别音频输入流：<br>识别音频输入流的步骤与上面的大体相似，最主要的不同是音频资源的区别一个是直接从文件获取另外一个是从AVAudioNode的输出数据获取的。所以我们首先要开启麦克风获取AVAudioNode输出的音频信息，这部分就不细说了直接看代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">AVAudioSession *session = [AVAudioSession sharedInstance];</div><div class="line">   NSError *error;</div><div class="line">   [session setCategory:AVAudioSessionCategoryRecord error:&amp;error];</div><div class="line">   if (error) &#123;</div><div class="line">       self.speechText.text = error.description;</div><div class="line">       return;</div><div class="line">   &#125;</div><div class="line">   [session setMode:AVAudioSessionModeMeasurement error:&amp;error];</div><div class="line">   if (error) &#123;</div><div class="line">       self.speechText.text = error.description;</div><div class="line">       return;</div><div class="line">   &#125;</div><div class="line">   [session setActive:YES withOptions:AVAudioSessionSetActiveOptionNotifyOthersOnDeactivation error:&amp;error];</div><div class="line">   if (error) &#123;</div><div class="line">        self.speechText.text = error.description;</div><div class="line">       return;</div><div class="line">   &#125;</div><div class="line"></div><div class="line">   if (!auengine.inputNode) &#123;</div><div class="line">       self.speechText.text = @&quot;无输入节点&quot;;</div><div class="line">       return;</div><div class="line"></div><div class="line">   &#125;</div><div class="line">   </div><div class="line">   </div><div class="line">   [auengine.inputNode installTapOnBus:0 bufferSize:1024 format:[auengine.inputNode outputFormatForBus:0] block:^(AVAudioPCMBuffer * _Nonnull buffer, AVAudioTime * _Nonnull when) &#123;</div><div class="line">       if (buffer) &#123;</div><div class="line">           [requestbuffer appendAudioPCMBuffer:buffer];</div><div class="line">       &#125;</div><div class="line">   &#125;];</div><div class="line">   </div><div class="line">[auengine prepare];</div><div class="line">   [auengine startAndReturnError:&amp;error];</div></pre></td></tr></table></figure>
-<p>这样我们在<code>- (void)installTapOnBus:(AVAudioNodeBus)bus bufferSize:(AVAudioFrameCount)bufferSize format:(AVAudioFormat * __nullable)format block:(AVAudioNodeTapBlock)tapBlock</code><br>这个方法的block里面就可以获取到输出的音频信息，接下来我们再识别这个信息：<br>第一步都是创建一个SFSpeechRecognizer实例，第二步有区别我们要创建SFSpeechAudioBufferRecognitionRequest这个对象的实例，第三步还一样的调用：<code>- (SFSpeechRecognitionTask *)recognitionTaskWithRequest:(SFSpeechRecognitionRequest *)request
-                                          resultHandler:(void (^)(SFSpeechRecognitionResult * __nullable result, NSError * __nullable error))resultHandler;</code> 的方法。</p>
-<p>看代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">SFSpeechRecognizer *recognize = [[SFSpeechRecognizer alloc] init];</div><div class="line">   SFSpeechAudioBufferRecognitionRequest *requestbuffer = [[SFSpeechAudioBufferRecognitionRequest alloc] init];</div><div class="line">   </div><div class="line">[recognize recognitionTaskWithRequest:requestbuffer resultHandler:^(SFSpeechRecognitionResult * _Nullable result, NSError * _Nullable error) &#123;</div><div class="line">       if (result) &#123;</div><div class="line">           self.speechText.text = result.bestTranscription.formattedString;</div><div class="line">       &#125;</div><div class="line">       if (error) &#123;</div><div class="line">           self.speechText.text = error.description;</div><div class="line">       &#125;</div><div class="line">   &#125;];</div></pre></td></tr></table></figure>
-<p>完整的源码已经上传到了github,<a href="https://github.com/mayflight/speech.git" target="_blank" rel="external">下载源码</a></p>
-
+        <blockquote>
+<p>以前做过文件加密方面的工作，记录一下代码。</p>
+</blockquote>
+<h2 id="定义加密和解密的接口"><a href="#定义加密和解密的接口" class="headerlink" title="定义加密和解密的接口"></a>定义加密和解密的接口</h2><p>.h文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">#import &lt;Foundation/Foundation.h&gt;</div><div class="line">#import &lt;CommonCrypto/CommonCrypto.h&gt;</div><div class="line">@interface NSData (Encrypt)</div><div class="line">- (NSData *)encryptWith:(NSString *)key;</div><div class="line">- (NSData *)decodeWith:(NSString *)key;</div><div class="line">@end</div></pre></td></tr></table></figure>
+<h2 id="使用CCCrypt接口实现加密和解密"><a href="#使用CCCrypt接口实现加密和解密" class="headerlink" title="使用CCCrypt接口实现加密和解密"></a>使用CCCrypt接口实现加密和解密</h2><h3 id="加密"><a href="#加密" class="headerlink" title="加密"></a>加密</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">- (NSData *)encryptWith:(NSString *)key   //加密</div><div class="line">&#123;</div><div class="line">    char keyPtr[kCCKeySizeAES256+5];</div><div class="line">    bzero(keyPtr, sizeof(keyPtr));</div><div class="line">    [key getCString:keyPtr maxLength:sizeof(keyPtr) encoding:NSUTF8StringEncoding];</div><div class="line">    NSUInteger dataLength = [self length];</div><div class="line">    size_t bufferSize = dataLength + kCCBlockSizeAES128;</div><div class="line">    void *buffer = malloc(bufferSize);</div><div class="line">    size_t numBytesEncrypted = 0;</div><div class="line">    CCCryptorStatus cryptStatus = CCCrypt(kCCEncrypt, kCCAlgorithmAES128,</div><div class="line">                                          kCCOptionPKCS7Padding | kCCOptionECBMode,</div><div class="line">                                          keyPtr, kCCBlockSizeAES128,</div><div class="line">                                          NULL,</div><div class="line">                                          [self bytes], dataLength,</div><div class="line">                                          buffer, bufferSize,</div><div class="line">                                          &amp;numBytesEncrypted);</div><div class="line">    if (cryptStatus == kCCSuccess) &#123;</div><div class="line">        return [NSData dataWithBytesNoCopy:buffer length:numBytesEncrypted];</div><div class="line">    &#125;</div><div class="line">    free(buffer);</div><div class="line">    return nil;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="解密"><a href="#解密" class="headerlink" title="解密"></a>解密</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">- (NSData *)decodeWith:(NSString *)key   //解密</div><div class="line">&#123;</div><div class="line">    char keyPtr[kCCKeySizeAES256+5];</div><div class="line">    bzero(keyPtr, sizeof(keyPtr));</div><div class="line">    [key getCString:keyPtr maxLength:sizeof(keyPtr) encoding:NSUTF8StringEncoding];</div><div class="line">    NSUInteger dataLength = [self length];</div><div class="line">    size_t bufferSize = dataLength + kCCBlockSizeAES128;</div><div class="line">    void *buffer = malloc(bufferSize);</div><div class="line">    size_t numBytesDecrypted = 0;</div><div class="line">    CCCryptorStatus cryptStatus = CCCrypt(kCCDecrypt, kCCAlgorithmAES128,</div><div class="line">                                          kCCOptionPKCS7Padding | kCCOptionECBMode,</div><div class="line">                                          keyPtr, kCCBlockSizeAES128,</div><div class="line">                                          NULL,</div><div class="line">                                          [self bytes], dataLength,</div><div class="line">                                          buffer, bufferSize,</div><div class="line">                                          &amp;numBytesDecrypted);</div><div class="line">    if (cryptStatus == kCCSuccess) &#123;</div><div class="line">        return [NSData dataWithBytesNoCopy:buffer length:numBytesDecrypted];</div><div class="line">    &#125;</div><div class="line">    free(buffer);</div><div class="line">    return nil;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -436,12 +424,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/iOS/" rel="tag"># iOS</a>
-          
-        </div>
-      
 
       
         
@@ -451,8 +433,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/21/FlexBox布局/" rel="next" title="FlexBox布局">
-                <i class="fa fa-chevron-left"></i> FlexBox布局
+              <a href="/2017/06/07/WebMagic快速入门/" rel="next" title="WebMagic快速入门">
+                <i class="fa fa-chevron-left"></i> WebMagic快速入门
               </a>
             
           </div>
@@ -460,10 +442,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/06/07/WebMagic快速入门/" rel="prev" title="WebMagic快速入门">
-                WebMagic快速入门 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -512,8 +490,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://www.wsfjq.com/photos/bd16006992.jpg"
@@ -577,6 +564,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义加密和解密的接口"><span class="nav-number">1.</span> <span class="nav-text">定义加密和解密的接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用CCCrypt接口实现加密和解密"><span class="nav-number">2.</span> <span class="nav-text">使用CCCrypt接口实现加密和解密</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#加密"><span class="nav-number">2.1.</span> <span class="nav-text">加密</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解密"><span class="nav-number">2.2.</span> <span class="nav-text">解密</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
