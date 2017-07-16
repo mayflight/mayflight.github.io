@@ -90,24 +90,19 @@
 
 
 
-<meta name="description" content="java 爬虫工具WebMagic快速入门 webmagic 是一个优秀的java爬虫工具主要应用场景是对某些页面进行深度爬取。目前在github上已经有4515个Star，用作者的原话来说webmagic的目标是：做一个Java语言Web爬虫的教科书般的实现。本文是一篇快速入门简介，如您想深入了解请点击github上面webmagic仓库链接。  WebMagic的四大组件 Downloader">
+<meta name="description" content="很多时候系统提供的视图控制器转场动画效果远远无法满足我们的需求，这时候我们就需要实现自己的动画效果了。 模态视图的转场动画要想自定义模态视图的转场动画效果，我们需要提供一个实现了模态视图控制器transitioningDelegate代理的对象。 12@available(iOS 7.0, *)weak open var transitioningDelegate: UIViewControl">
 <meta property="og:type" content="article">
-<meta property="og:title" content="WebMagic快速入门">
-<meta property="og:url" content="http://13fafa.cn/2017/06/07/WebMagic快速入门/index.html">
+<meta property="og:title" content="UIViewController的转场动画">
+<meta property="og:url" content="http://13fafa.cn/2017/06/14/UIViewController的转场动画/index.html">
 <meta property="og:site_name" content="步迹足印">
-<meta property="og:description" content="java 爬虫工具WebMagic快速入门 webmagic 是一个优秀的java爬虫工具主要应用场景是对某些页面进行深度爬取。目前在github上已经有4515个Star，用作者的原话来说webmagic的目标是：做一个Java语言Web爬虫的教科书般的实现。本文是一篇快速入门简介，如您想深入了解请点击github上面webmagic仓库链接。  WebMagic的四大组件 Downloader">
-<meta property="og:image" content="http://i4.buimg.com/595348/7109b189c0c785e3.png">
-<meta property="og:image" content="http://i1.piimg.com/595348/eef1abbdf05d254b.png">
-<meta property="og:image" content="http://i1.piimg.com/595348/4afb2c080e427075.png">
-<meta property="og:image" content="http://i1.piimg.com/595348/812572a9a32b2d18.png">
-<meta property="og:image" content="http://i1.piimg.com/595348/fa2767538458a610.png">
-<meta property="og:image" content="http://i4.buimg.com/595348/50c6840fc5e079db.png">
-<meta property="og:image" content="http://i4.buimg.com/595348/df050f502b0126d7.png">
-<meta property="og:updated_time" content="2017-06-07T13:14:34.000Z">
+<meta property="og:description" content="很多时候系统提供的视图控制器转场动画效果远远无法满足我们的需求，这时候我们就需要实现自己的动画效果了。 模态视图的转场动画要想自定义模态视图的转场动画效果，我们需要提供一个实现了模态视图控制器transitioningDelegate代理的对象。 12@available(iOS 7.0, *)weak open var transitioningDelegate: UIViewControl">
+<meta property="og:image" content="http://i2.kiimg.com/595348/64af3cbf698d9e27.gif">
+<meta property="og:image" content="http://i1.buimg.com/595348/801dcb53cf26e77a.gif">
+<meta property="og:updated_time" content="2017-07-16T14:53:11.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="WebMagic快速入门">
-<meta name="twitter:description" content="java 爬虫工具WebMagic快速入门 webmagic 是一个优秀的java爬虫工具主要应用场景是对某些页面进行深度爬取。目前在github上已经有4515个Star，用作者的原话来说webmagic的目标是：做一个Java语言Web爬虫的教科书般的实现。本文是一篇快速入门简介，如您想深入了解请点击github上面webmagic仓库链接。  WebMagic的四大组件 Downloader">
-<meta name="twitter:image" content="http://i4.buimg.com/595348/7109b189c0c785e3.png">
+<meta name="twitter:title" content="UIViewController的转场动画">
+<meta name="twitter:description" content="很多时候系统提供的视图控制器转场动画效果远远无法满足我们的需求，这时候我们就需要实现自己的动画效果了。 模态视图的转场动画要想自定义模态视图的转场动画效果，我们需要提供一个实现了模态视图控制器transitioningDelegate代理的对象。 12@available(iOS 7.0, *)weak open var transitioningDelegate: UIViewControl">
+<meta name="twitter:image" content="http://i2.kiimg.com/595348/64af3cbf698d9e27.gif">
 
 
 
@@ -135,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://13fafa.cn/2017/06/07/WebMagic快速入门/"/>
+  <link rel="canonical" href="http://13fafa.cn/2017/06/14/UIViewController的转场动画/"/>
 
 
 
 
 
-  <title>WebMagic快速入门 | 步迹足印</title>
+  <title>UIViewController的转场动画 | 步迹足印</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -304,7 +299,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://13fafa.cn/2017/06/07/WebMagic快速入门/">
+    <link itemprop="mainEntityOfPage" href="http://13fafa.cn/2017/06/14/UIViewController的转场动画/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="叶亚冬">
@@ -321,7 +316,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">WebMagic快速入门</h1>
+          <h1 class="post-title" itemprop="name headline">UIViewController的转场动画</h1>
         
 
         <div class="post-meta">
@@ -333,8 +328,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-07T20:57:49+08:00">
-                2017-06-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-14T21:26:00+08:00">
+                2017-06-14
               </time>
             
 
@@ -352,7 +347,7 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a class="cloud-tie-join-count" href="/2017/06/07/WebMagic快速入门/#comments" itemprop="discussionUrl">
+                <a class="cloud-tie-join-count" href="/2017/06/14/UIViewController的转场动画/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count join-count" itemprop="commentCount"></span>
                 </a>
               </span>
@@ -378,93 +373,28 @@
       
 
       
-        <h1 id="java-爬虫工具WebMagic快速入门"><a href="#java-爬虫工具WebMagic快速入门" class="headerlink" title="java 爬虫工具WebMagic快速入门"></a>java 爬虫工具WebMagic快速入门</h1><blockquote>
-<p>webmagic 是一个优秀的java爬虫工具主要应用场景是对某些页面进行深度爬取。目前在github上已经有4515个Star，用作者的原话来说webmagic的目标是：做一个Java语言Web爬虫的教科书般的实现。本文是一篇快速入门简介，如您想深入了解请点击github上面<a href="https://github.com/code4craft/webmagic" target="_blank" rel="external">webmagic</a>仓库链接。</p>
-</blockquote>
-<h2 id="WebMagic的四大组件"><a href="#WebMagic的四大组件" class="headerlink" title="WebMagic的四大组件"></a>WebMagic的四大组件</h2><ul>
-<li><p>Downloader<br><br>downloader 负责从互联网上面下载页面</p>
-</li>
-<li><p>PageProcessor<br><br>pageProcssor 负责解析页面获取有用信息，我们主要通过实现PageProcessor的接口来进行定制，获取我们需要的页面信息。</p>
-</li>
-<li>Scheduler<br><br>scheduler 负责管理待抓取的URL，以及url的去重</li>
-<li>Pipeline<br><br>pipeline 负责处理抽取到的信息，webmagic默认提供了两种实现将信息输出到控制台和保存到本地文件。我们也可以通过实现pipeline的接口来自定义处理抽取结果的方式如，保存到数据库。</li>
-</ul>
-<h2 id="WebMagic的使用"><a href="#WebMagic的使用" class="headerlink" title="WebMagic的使用"></a>WebMagic的使用</h2><h3 id="添加依赖"><a href="#添加依赖" class="headerlink" title="添加依赖"></a>添加依赖</h3><ol>
-<li><p>如果使用maven可在pom文件添加以下字段:<br></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">  	&lt;dependency&gt;</div><div class="line">  			&lt;groupId&gt;us.codecraft&lt;/groupId&gt;</div><div class="line">  			&lt;artifactId&gt;webmagic-core&lt;/artifactId&gt;</div><div class="line">  			&lt;version&gt;0.6.1&lt;/version&gt;</div><div class="line">&lt;/dependency&gt;</div><div class="line">      </div><div class="line">&lt;dependency&gt;</div><div class="line">  			&lt;groupId&gt;us.codecraft&lt;/groupId&gt;</div><div class="line">  			&lt;artifactId&gt;webmagic-extension&lt;/artifactId&gt;</div><div class="line">  			&lt;version&gt;0.6.1&lt;/version&gt;</div><div class="line">&lt;/dependency&gt;</div></pre></td></tr></table></figure>
-</li>
-<li><p>如果不使用maven可以<a href="http://webmagic.io/download.html" target="_blank" rel="external">点击下载</a>jar包后导入工程里面</p>
-</li>
-</ol>
-<h3 id="一个WebMagic的小demo"><a href="#一个WebMagic的小demo" class="headerlink" title="一个WebMagic的小demo"></a>一个WebMagic的小demo</h3><p><strong>这个demo的目的是爬取起点中文网的一个列表页面 <a href="http://a.qidian.com/?chanId=22" target="_blank" rel="external">http://a.qidian.com/?chanId=22</a> 从列表页面获取书籍详情的页面的链接，然后在详情页面爬取书籍名称，作者，更新时间和书籍简介</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">public class TestPageProcessor implements PageProcessor&#123;</div><div class="line">	//设置站点信息</div><div class="line">	private Site site = Site.me().setRetryTimes(3).setSleepTime(1000).setTimeOut(10000);</div><div class="line">	 </div><div class="line">	 @Override</div><div class="line">	 public void process(Page page) &#123;</div><div class="line">		 </div><div class="line">		 if(page.getRequest().getUrl().indexOf(&quot;book.qidian.com/info&quot;) != -1) &#123;</div><div class="line">			 //设置捕获规则</div><div class="line">			 page.putField(&quot;bookName&quot;, page.getHtml().css(&quot;div.book-info &quot;).css(&quot;h1&quot;).css(&quot;em&quot;,&quot;text&quot;).toString());</div><div class="line">			 page.putField(&quot;author&quot;, page.getHtml().css(&quot;div.book-info&quot;).xpath(&quot;h1/span/a/text()&quot;).toString());</div><div class="line">			 page.putField(&quot;time&quot;, page.getHtml().css(&quot;div.book-state&quot;).xpath(&quot;li/div/p/em/text()&quot;).toString());</div><div class="line">			 page.putField(&quot;detail&quot;, page.getHtml().css(&quot;div.book-intro&quot;).css(&quot;p&quot;,&quot;text&quot;).toString());</div><div class="line">		 &#125;else &#123;</div><div class="line">			 //设置查找路径</div><div class="line">			 page.addTargetRequests(page.getHtml().xpath(&quot;//div[@class=&apos;book-mid-info&apos;]/h4/a&quot;).links().regex(&quot;^*./book.qidian.com/info/\\d&#123;1,&#125;&quot;).all());</div><div class="line">		 &#125;</div><div class="line">	 &#125;</div><div class="line">	 </div><div class="line">	 @Override</div><div class="line">	 public Site getSite() &#123;</div><div class="line">		 return site;</div><div class="line">	 &#125;</div><div class="line">	 </div><div class="line">	 public static void main(String[] args) &#123;</div><div class="line">		 Spider.create(new TestPageProcessor()).addUrl(&quot;http://a.qidian.com/?chanId=22&quot;).thread(5).run(); </div><div class="line">	 &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ol>
-<li><p>pageprocessor接口说明 </p>
-<ul>
-<li><code>public void process(Page page);</code><br><br>可以通过实现这个接口来定义页面的抽取规则如：抽取页面的URL、获取页面标签的文本等等。</li>
-<li><code>public Site getSite();</code><br><br>可以通过实现这个接口来对你要抽取的网站进行定制如：设置请求头、超时时间、userAgent等等。对于某些需要登录验证的网站还可以在这里设置网站的cookie值来获取访问权限。在中国移动网站查询通话记录除了需要进行登录还要进行另外一重的身份验证才有查询权限,为site设置cookie值可以很方便的解决这个问题。</li>
-</ul>
-</li>
-<li><p>爬虫设置<br><br>Spider是爬虫启动的入口。在启动爬虫之前，我们需要使用一个PageProcessor创建一个Spider对象，然后使用run()进行启动，可设置开启的线程数和初始爬取的URL。同时也可以设置Spider的其他组件（Downloader、Scheduler、Pipeline）为我们自定义的实现。<a href="https://github.com/code4craft/webmagic/blob/master/webmagic-core/src/main/java/us/codecraft/webmagic/Spider.java" target="_blank" rel="external">Spider</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Spider.create(new TestPageProcessor()).addUrl(&quot;http://a.qidian.com/?chanId=22&quot;).thread(5).run();</div></pre></td></tr></table></figure>
-<p>在这里我们设置开启5条线程，然后使用run()启动爬虫（run（） 会阻塞当前线程，start()或者runAsync()是异步启动不会阻塞当前线程），默认将爬取结果输出到控制台，如果我们想将结果保存到文件可以这样:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Spider.create(new TestPageProcessor()).addUrl(&quot;http://a.qidian.com/?chanId=22&quot;).addPipeline(new FilePipeline(&quot;/Users/stone/Desktop/&quot;)).thread(5).run();</div></pre></td></tr></table></figure>
-</li>
-<li><p>站点设置</p>
-</li>
-</ol>
-<p>Site保存了你要爬取的站点信息，同样的你也可以对site进行一些设置。本次爬取就设置了超时时间1000，重试次数3次,休眠实现1000。<a href="https://github.com/code4craft/webmagic/blob/master/webmagic-core/src/main/java/us/codecraft/webmagic/Site.java" target="_blank" rel="external">Site</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">private Site site = Site.me().setRetryTimes(3).setSleepTime(1000).setTimeOut(10000);</div></pre></td></tr></table></figure></p>
-<ol>
-<li><p>抽取规则</p>
-<ul>
-<li><p>WebMagic提供了一套接口用于页面信息的抽取<br>主要有Css选择器，XPtah，正则匹配这三种方法。另外提供了<code>get(),toString(),all(),match()</code>方法来获取抽取结果。<a href="https://github.com/code4craft/webmagic/blob/master/webmagic-core/src/main/java/us/codecraft/webmagic/selector/Selectable.java" target="_blank" rel="external">Selectable</a></p>
-</li>
-<li><p>对于列表页面我们需要抽取详情页面的链接添加到查找路径里面去：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">page.addTargetRequests(page.getHtml().xpath(&quot;//div[@class=&apos;book-mid-info&apos;]/h4/a&quot;).links().regex(&quot;^*./book.qidian.com/info/\\d&#123;1,&#125;&quot;).all());</div></pre></td></tr></table></figure>
-<p><img src="http://i4.buimg.com/595348/7109b189c0c785e3.png" alt="路径"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">xpath(&quot;//div[@class=&apos;book-mid-info&apos;]/h4/a&quot;)</div></pre></td></tr></table></figure>
-<p>上面这条语句使用了Xpath进行抽取，首先查找class是book-mid-info的div标签，然后再查找这个div标签下面的h4子标签，再查找h4标签的子标签a。最终获取a标签下面的所有链接。并对获取到的链接进行正则匹配，并获取所有查到的链接</p>
-</li>
-<li><p>详情页面书名抽取<br><img src="http://i1.piimg.com/595348/eef1abbdf05d254b.png" alt="BookName"><br>我们使用Csss进行抽取，将获取到的书籍名称放到bookName标签里面。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">page.putField(&quot;bookName&quot;, page.getHtml().css(&quot;div.book-info &quot;).css(&quot;h1&quot;).css(&quot;em&quot;,&quot;text&quot;).toString());</div></pre></td></tr></table></figure>
-<p>上面这条语句使用Css选择器先选中class是book-info的div标签，再在选中结果里面查找div的h1子标签，再从h1子标签里面查找em标签。查到em标签后获取em标签的文本，最终将抽取到的结果转成字符串。</p>
-</li>
-<li><p>详情页面作者名称抽取</p>
-<p><img src="http://i1.piimg.com/595348/4afb2c080e427075.png" alt="author"><br>我们使用css选择器和xpath结合的方式来抽取作者笔名然后将信息放到author标签里面。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">page.putField(&quot;author&quot;, page.getHtml().css(&quot;div.book-info&quot;).xpath(&quot;h1/span/a/text()&quot;).toString());</div></pre></td></tr></table></figure>
-<p>与上面一样首先使用css选择器选择class是book-info的标签，然后再使用Xpath抽取此标签下面的span标签，span标签下面的a标签并且获取a标签的文本，将结果转换成功字符串。</p>
-</li>
-</ul>
-</li>
-</ol>
-<ul>
-<li><p>详情页面更新时间和简介的抽取</p>
-<p><img src="http://i1.piimg.com/595348/812572a9a32b2d18.png" alt="time"></p>
-<p><code>page.putField(&quot;time&quot;, page.getHtml().css(&quot;div.book-state&quot;).xpath(&quot;li/div/p/em/text()&quot;).toString());</code></p>
-<p><img src="http://i1.piimg.com/595348/fa2767538458a610.png" alt="detail"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">page.putField(&quot;detail&quot;, page.getHtml().css(&quot;div.book-intro&quot;).css(&quot;p&quot;,&quot;text&quot;).toString());</div></pre></td></tr></table></figure>
-<ul>
-<li>爬取结果<br><img src="http://i4.buimg.com/595348/50c6840fc5e079db.png" alt="result"></li>
-</ul>
-</li>
-</ul>
-<h3 id="PipLine的定制"><a href="#PipLine的定制" class="headerlink" title="PipLine的定制"></a>PipLine的定制</h3><p>   在实际生产我们一般需要把查询的结果先存储到一个对象中然后再处理这个对象(比如，将对象存储到数据库)</p>
-<ul>
-<li><p>将结果存储到对象<br><br>我们对协议PageProcessor的接口process进行改写,很简单:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">   @Override</div><div class="line">public void process(Page page) &#123;</div><div class="line"> </div><div class="line"> if(page.getRequest().getUrl().indexOf(&quot;book.qidian.com/info&quot;) != -1) &#123;</div><div class="line">	 //设置捕获规则</div><div class="line">	 Book book = new Book();</div><div class="line">	 book.setBookName(page.getHtml().css(&quot;div.book-info &quot;).css(&quot;h1&quot;).css(&quot;em&quot;,&quot;text&quot;).toString());</div><div class="line">	 book.setAuthor(page.getHtml().css(&quot;div.book-info&quot;).xpath(&quot;h1/span/a/text()&quot;).toString());</div><div class="line">	 book.setTime(page.getHtml().css(&quot;div.book-state&quot;).xpath(&quot;li/div/p/em/text()&quot;).toString());</div><div class="line">	 book.setDetail(page.getHtml().css(&quot;div.book-intro&quot;).css(&quot;p&quot;,&quot;text&quot;).toString());</div><div class="line">	 page.putField(&quot;book&quot;, book);</div><div class="line"> &#125;else &#123;</div><div class="line">	 //设置查找路径</div><div class="line">	 page.addTargetRequests(page.getHtml().xpath(&quot;//div[@class=&apos;book-mid-info&apos;]/h4/a&quot;).links().regex(&quot;^*./book.qidian.com/info/\\d&#123;1,&#125;&quot;).all());</div><div class="line"> &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>先将捕获的信息存储到对象book中，通过putFidld函数将这个book对象存储到resultItems中。</p>
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"> public void putField(String key, Object field) &#123;</div><div class="line">    resultItems.put(key, field);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>从BookPipline里面获取对象</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">   public class BookPipline implements Pipeline &#123;</div><div class="line">	@Override</div><div class="line">	public void process(ResultItems resultItems, Task task) &#123;</div><div class="line">		</div><div class="line">		Book book = (Book)resultItems.get(&quot;book&quot;);</div><div class="line">		if (book != null) &#123;</div><div class="line">			System.out.println(&quot;这些信息可存数据库-&gt;&quot;+book.descript());</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>从resultItems里面通过key值book可以直接获取到在PageProcess接口里面存储的对象。</p>
-</li>
-<li><p>使用自定义的信息处理模块BookPipline</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Spider.create(new TestPageProcessor()).addUrl(&quot;http://a.qidian.com/?chanId=22&quot;).addPipeline(new BookPipline()).thread(5).run();</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>   在启动爬虫时可以直接使用我们定制的处理模块<br>    <img src="http://i4.buimg.com/595348/df050f502b0126d7.png" alt="bookPipline"></p>
-<h3 id="注解的使用"><a href="#注解的使用" class="headerlink" title="注解的使用"></a>注解的使用</h3><p>   webmagic除了上面的这种方式还可以提供了注解使用方式，两种方法各有优劣如果业务简单可以使用注解，感兴趣的可以点击<a href="http://webmagic.io/docs/zh/posts/ch5-annotation/" target="_blank" rel="external">注解</a>来了解使用方法。</p>
+        <p><img src="http://i2.kiimg.com/595348/64af3cbf698d9e27.gif" alt="animate"></p>
+<p><img src="http://i1.buimg.com/595348/801dcb53cf26e77a.gif" alt="animate2"></p>
+<p><em>很多时候系统提供的视图控制器转场动画效果远远无法满足我们的需求，这时候我们就需要实现自己的动画效果了。</em></p>
+<h1 id="模态视图的转场动画"><a href="#模态视图的转场动画" class="headerlink" title="模态视图的转场动画"></a>模态视图的转场动画</h1><p>要想自定义模态视图的转场动画效果，我们需要提供一个实现了模态视图控制器transitioningDelegate代理的对象。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">@available(iOS 7.0, *)</div><div class="line">weak open var transitioningDelegate: UIViewControllerTransitioningDelegate?</div></pre></td></tr></table></figure>
+<p>如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">controller.transitioningDelegate = manager</div><div class="line">self.present(controller, animated: true, completion: nil)</div></pre></td></tr></table></figure>
+<p>在上面的代码中manager对象就实现了transitioningDelegate的代理方法。</p>
+<h2 id="UIViewControllerTransitioningDelegate代理方法"><a href="#UIViewControllerTransitioningDelegate代理方法" class="headerlink" title="UIViewControllerTransitioningDelegate代理方法"></a>UIViewControllerTransitioningDelegate代理方法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">@available(iOS 2.0, *)</div><div class="line">   optional public func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -&gt; UIViewControllerAnimatedTransitioning?</div><div class="line"></div><div class="line">   </div><div class="line">@available(iOS 2.0, *)</div><div class="line">   optional public func animationController(forDismissed dismissed: UIViewController) -&gt; UIViewControllerAnimatedTransitioning?</div></pre></td></tr></table></figure>
+<p>今天我们主要说的是上面两个代理方法，从方法名字可以看出来它们分别用于管理present和dismiss过程的动画。<br>这个两个方法均需要返回一个UIViewControllerAnimatedTransitioning对象。<br>UIViewControllerAnimatedTransitioning是一个协议用来控制转场动画的。稍后我们再细说。</p>
+<h1 id="导航控制器的转场动画"><a href="#导航控制器的转场动画" class="headerlink" title="导航控制器的转场动画"></a>导航控制器的转场动画</h1><p>与模态视图类似要想实现转场动画，导航控制器也需要提供一个实现了delegate代理的对象:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">weak open var delegate: UINavigationControllerDelegate?</div></pre></td></tr></table></figure>
+<p>如:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">self.navigationController?.delegate = manager          self.navigationController?.pushViewController(controller, animated: true)</div></pre></td></tr></table></figure></p>
+<h2 id="UINavigationControllerDelegate代理方法"><a href="#UINavigationControllerDelegate代理方法" class="headerlink" title="UINavigationControllerDelegate代理方法"></a>UINavigationControllerDelegate代理方法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">@available(iOS 7.0, *)</div><div class="line">   optional public func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -&gt; UIViewControllerAnimatedTransitioning?</div></pre></td></tr></table></figure>
+<p>对于导航控制器的代理我们今天只介绍上面这个代理方法，这个方法表示导航控制器切换视图控制器过程的代理方法，其中参数operation是个枚举值UINavigationControllerOperation</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">public enum UINavigationControllerOperation : Int &#123;  </div><div class="line"></div><div class="line">    case none</div><div class="line">    case push</div><div class="line">    case pop</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>用来表示动作的方向是push 还是pop</p>
+<p>与模态视图一样它也要求我们返回UIViewControllerAnimatedTransitioning对象。</p>
+<h1 id="UIViewControllerAnimatedTransitioning协议"><a href="#UIViewControllerAnimatedTransitioning协议" class="headerlink" title="UIViewControllerAnimatedTransitioning协议"></a>UIViewControllerAnimatedTransitioning协议</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -&gt; TimeInterval</div><div class="line"></div><div class="line">public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning)</div></pre></td></tr></table></figure>
+<p>上面的transitionDuration方法需要提供一个动画时间，transitionDuration方法需要提供一个具体的动画实现。<br>通过方法的UIViewControllerContextTransitioning类型的参数我们可以获取的一些有用信息:fromView和toView以及容器视图:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -&gt; TimeInterval &#123;</div><div class="line"></div><div class="line">		//动画时间</div><div class="line">       return time</div><div class="line"> &#125;</div><div class="line">    </div><div class="line">public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) &#123;</div><div class="line"></div><div class="line">		//容器视图</div><div class="line">        let view = transitionContext.containerView</div><div class="line">        //转场动画的第一视图</div><div class="line">        let fromView = transitionContext.view(forKey: UITransitionContextViewKey.from)</div><div class="line">        //转场动画的第二个视图</div><div class="line">        let toView = transitionContext.view(forKey: UITransitionContextViewKey.to)</div><div class="line">        if fromView == nil || toView == nil &#123;</div><div class="line">            return</div><div class="line">        &#125;</div><div class="line">        view.backgroundColor = UIColor.white</div><div class="line">        view.addSubview(fromView!)</div><div class="line">        view.addSubview(toView!)</div><div class="line">        </div><div class="line">        //提供自定义的动画实现</div><div class="line">        ...</div><div class="line">       </div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<h1 id="AnimateManager"><a href="#AnimateManager" class="headerlink" title="AnimateManager"></a>AnimateManager</h1><p>基于上面的分析我们提供了一种转场动画的实现AnimateManager，最终的实现效果可以参考文章开头的gif图片演示。只需要一行代码即可接入我们提供的动画效果。具体的接入方式以及项目的源码请查看git仓库，<a href="https://github.com/mayflight/ControllerTransitionAnimate" target="_blank" rel="external">git仓库跳转点这里!</a></p>
 
       
     </div>
@@ -522,8 +452,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/21/iOS10语音识别/" rel="next" title="iOS10语音识别">
-                <i class="fa fa-chevron-left"></i> iOS10语音识别
+              <a href="/2017/06/07/iOS加密CCCrypt/" rel="next" title="iOS加密CCCrypt">
+                <i class="fa fa-chevron-left"></i> iOS加密CCCrypt
               </a>
             
           </div>
@@ -531,10 +461,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/06/07/iOS加密CCCrypt/" rel="prev" title="iOS加密CCCrypt">
-                iOS加密CCCrypt <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -667,7 +593,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#java-爬虫工具WebMagic快速入门"><span class="nav-number">1.</span> <span class="nav-text">java 爬虫工具WebMagic快速入门</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#WebMagic的四大组件"><span class="nav-number">1.1.</span> <span class="nav-text">WebMagic的四大组件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WebMagic的使用"><span class="nav-number">1.2.</span> <span class="nav-text">WebMagic的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#添加依赖"><span class="nav-number">1.2.1.</span> <span class="nav-text">添加依赖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一个WebMagic的小demo"><span class="nav-number">1.2.2.</span> <span class="nav-text">一个WebMagic的小demo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PipLine的定制"><span class="nav-number">1.2.3.</span> <span class="nav-text">PipLine的定制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注解的使用"><span class="nav-number">1.2.4.</span> <span class="nav-text">注解的使用</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#模态视图的转场动画"><span class="nav-number">1.</span> <span class="nav-text">模态视图的转场动画</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#UIViewControllerTransitioningDelegate代理方法"><span class="nav-number">1.1.</span> <span class="nav-text">UIViewControllerTransitioningDelegate代理方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#导航控制器的转场动画"><span class="nav-number">2.</span> <span class="nav-text">导航控制器的转场动画</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#UINavigationControllerDelegate代理方法"><span class="nav-number">2.1.</span> <span class="nav-text">UINavigationControllerDelegate代理方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#UIViewControllerAnimatedTransitioning协议"><span class="nav-number">3.</span> <span class="nav-text">UIViewControllerAnimatedTransitioning协议</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#AnimateManager"><span class="nav-number">4.</span> <span class="nav-text">AnimateManager</span></a></li></ol></div>
             
 
           </div>
