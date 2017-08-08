@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Swift," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -90,17 +90,16 @@
 
 
 
-<meta name="description" content="Swift中类的构造过程分为两个阶段  每个存储属性在它们被引入的类中会被指定一个初始值当所有的存储属性都有一个初始值后第二阶段开始。 在新实例使用之前，允许每个类进一步定制它们的存储属性。   类的代理规则 子类中的指定构造器必须调用父类的指定构造器(如果本身是父类可以忽略这条) 一个类的便利构造器必须调用这个类的其他构造器（横向代理） 一个类的便利构造器必须最终调用这个类的指定构造器(向上代">
-<meta name="keywords" content="Swift">
+<meta name="description" content="简单的概念函数是个一等值   函数可以被作为参数传递到其他函数里面，也可以作为其他函数的返回值 柯里化   what?   柯里化就是将接受多个参数的函数变化为一系列只接受单个参数的函数。 12345678910func add1(_ x:Int,_ y:Int) -&amp;gt; Int&amp;#123;  return x + y&amp;#125;func add2(_ x:Int) -&amp;gt; (Int) -">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Swift构造过程2">
-<meta property="og:url" content="http://13fafa.cn/2017/05/21/Swift构造过程2/index.html">
+<meta property="og:title" content="函数式编程初介绍">
+<meta property="og:url" content="http://13fafa.cn/2017/08/08/函数式编程初介绍/index.html">
 <meta property="og:site_name" content="步迹足印">
-<meta property="og:description" content="Swift中类的构造过程分为两个阶段  每个存储属性在它们被引入的类中会被指定一个初始值当所有的存储属性都有一个初始值后第二阶段开始。 在新实例使用之前，允许每个类进一步定制它们的存储属性。   类的代理规则 子类中的指定构造器必须调用父类的指定构造器(如果本身是父类可以忽略这条) 一个类的便利构造器必须调用这个类的其他构造器（横向代理） 一个类的便利构造器必须最终调用这个类的指定构造器(向上代">
-<meta property="og:updated_time" content="2017-05-21T04:16:29.000Z">
+<meta property="og:description" content="简单的概念函数是个一等值   函数可以被作为参数传递到其他函数里面，也可以作为其他函数的返回值 柯里化   what?   柯里化就是将接受多个参数的函数变化为一系列只接受单个参数的函数。 12345678910func add1(_ x:Int,_ y:Int) -&amp;gt; Int&amp;#123;  return x + y&amp;#125;func add2(_ x:Int) -&amp;gt; (Int) -">
+<meta property="og:updated_time" content="2017-08-08T12:51:16.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Swift构造过程2">
-<meta name="twitter:description" content="Swift中类的构造过程分为两个阶段  每个存储属性在它们被引入的类中会被指定一个初始值当所有的存储属性都有一个初始值后第二阶段开始。 在新实例使用之前，允许每个类进一步定制它们的存储属性。   类的代理规则 子类中的指定构造器必须调用父类的指定构造器(如果本身是父类可以忽略这条) 一个类的便利构造器必须调用这个类的其他构造器（横向代理） 一个类的便利构造器必须最终调用这个类的指定构造器(向上代">
+<meta name="twitter:title" content="函数式编程初介绍">
+<meta name="twitter:description" content="简单的概念函数是个一等值   函数可以被作为参数传递到其他函数里面，也可以作为其他函数的返回值 柯里化   what?   柯里化就是将接受多个参数的函数变化为一系列只接受单个参数的函数。 12345678910func add1(_ x:Int,_ y:Int) -&amp;gt; Int&amp;#123;  return x + y&amp;#125;func add2(_ x:Int) -&amp;gt; (Int) -">
 
 
 
@@ -128,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://13fafa.cn/2017/05/21/Swift构造过程2/"/>
+  <link rel="canonical" href="http://13fafa.cn/2017/08/08/函数式编程初介绍/"/>
 
 
 
 
 
-  <title>Swift构造过程2 | 步迹足印</title>
+  <title>函数式编程初介绍 | 步迹足印</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -297,7 +296,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://13fafa.cn/2017/05/21/Swift构造过程2/">
+    <link itemprop="mainEntityOfPage" href="http://13fafa.cn/2017/08/08/函数式编程初介绍/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="叶亚冬">
@@ -314,7 +313,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Swift构造过程2</h1>
+          <h1 class="post-title" itemprop="name headline">函数式编程初介绍</h1>
         
 
         <div class="post-meta">
@@ -326,8 +325,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-21T11:54:03+08:00">
-                2017-05-21
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-08T20:37:31+08:00">
+                2017-08-08
               </time>
             
 
@@ -345,7 +344,7 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a class="cloud-tie-join-count" href="/2017/05/21/Swift构造过程2/#comments" itemprop="discussionUrl">
+                <a class="cloud-tie-join-count" href="/2017/08/08/函数式编程初介绍/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count join-count" itemprop="commentCount"></span>
                 </a>
               </span>
@@ -371,79 +370,22 @@
       
 
       
-        <blockquote>
-<p>Swift中类的构造过程分为两个阶段</p>
-<ol>
-<li>每个存储属性在它们被引入的类中会被指定一个初始值当所有的存储属性都有一个初始值后第二阶段开始。</li>
-<li>在新实例使用之前，允许每个类进一步定制它们的存储属性。</li>
-</ol>
+        <h2 id="简单的概念"><a href="#简单的概念" class="headerlink" title="简单的概念"></a>简单的概念</h2><h3 id="函数是个一等值"><a href="#函数是个一等值" class="headerlink" title="函数是个一等值"></a>函数是个一等值</h3><p>   函数可以被作为参数传递到其他函数里面，也可以作为其他函数的返回值</p>
+<h3 id="柯里化"><a href="#柯里化" class="headerlink" title="柯里化"></a>柯里化</h3><p>   what?<br><br>   柯里化就是将接受多个参数的函数变化为一系列只接受单个参数的函数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">func add1(_ x:Int,_ y:Int) -&gt; Int&#123;</div><div class="line">  return x + y</div><div class="line">&#125;</div><div class="line"></div><div class="line">func add2(_ x:Int) -&gt; (Int) -&gt; Int &#123;</div><div class="line">  return &#123;y in x+y&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">add1(2, 3)</div><div class="line">add2(2)(3)</div></pre></td></tr></table></figure>
+<p>add1经过柯里化后转成add2<br><br>why?</p>
+<blockquote>
+<p>在一些情况下我们想将函数作为参数传递给其他函数，如果未柯里化我们必须同时用到它的全部两个参数来调用这个函数。然而，对于像add2一样被柯里化的函数来说，我们有两个选择：可以使用一个或两个参数来调用。</p>
 </blockquote>
-<h2 id="类的代理规则"><a href="#类的代理规则" class="headerlink" title="类的代理规则"></a>类的代理规则</h2><ol>
-<li>子类中的指定构造器必须调用父类的指定构造器(如果本身是父类可以忽略这条)</li>
-<li>一个类的便利构造器必须调用这个类的其他构造器（横向代理）</li>
-<li>一个类的便利构造器必须最终调用这个类的指定构造器(向上代理)  </li>
-</ol>
-<h2 id="类的指定构造器"><a href="#类的指定构造器" class="headerlink" title="类的指定构造器"></a>类的指定构造器</h2><h3 id="父类的指定构造器"><a href="#父类的指定构造器" class="headerlink" title="父类的指定构造器"></a>父类的指定构造器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">class Book &#123;</div><div class="line">    var boonName:String</div><div class="line">    var bookPrice:Double</div><div class="line">    var sendFriend:String &#123;</div><div class="line">        get &#123;</div><div class="line">            return boonName</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    //指定构造器</div><div class="line">    init(name:String,price:Double) &#123;</div><div class="line">        boonName = name;</div><div class="line">        bookPrice = price</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ul>
-<li>指定构造器的语法跟值类型构造器的语法相同</li>
-</ul>
-<p>我们可以直接使用指定构造器来初始化一个实例如:<code>var book3 = Book(name: &quot;Like&quot;, price: 99)</code></p>
-<h3 id="子类的指定构造器"><a href="#子类的指定构造器" class="headerlink" title="子类的指定构造器"></a>子类的指定构造器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">class MyBook:Book &#123;</div><div class="line">    var publicationDate:String</div><div class="line">    </div><div class="line">    //指定构造器</div><div class="line">    init(name:String,price:Double,date:String) &#123;</div><div class="line">        publicationDate = date</div><div class="line">        //规则1，指定构造器必须调用父类中的指定构造器</div><div class="line">        super.init(name: name, price: price)</div><div class="line">        bookPrice = 100</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>MyBook这个类继承自Book，对于子类的指定构造器有如下需要注意的：</p>
-<ul>
-<li>在子类的指定构造器中必须先给新引入的属性赋值</li>
-<li>子类中的指定构造器必须代理父类中指定构造器<code>super.init(...)</code></li>
-<li>子类中指定构造器必须在代理父类中的指定构造器后再设置继承来的属性值，在之前设置继承的属性值会在调用父类的指定构造器过程中被覆盖的。</li>
-</ul>
-<p>我们可以用MyBook的指定构造器初始化:<code>var myBook5 = MyBook(name: &quot;Five&quot;, price: 9.9, date: &quot;1992&quot;)</code></p>
-<h2 id="类的便利构造器"><a href="#类的便利构造器" class="headerlink" title="类的便利构造器"></a>类的便利构造器</h2><p>对于Book这个类我们新增两个便利构造器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">convenience init(freeBookName:String) &#123;</div><div class="line">    self.init(name: freeBookName, price: 0)</div><div class="line">&#125;</div><div class="line"></div><div class="line">convenience init() &#123;</div><div class="line">    self.init(freeBookName:&quot;Love China&quot;)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>对于MyBook这个类新增两个便利构造器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">convenience init(myBookName:String,price:Double) &#123;</div><div class="line">    self.init(name: myBookName, price: price, date: &quot;today&quot;)</div><div class="line">    if bookPrice &gt; 50 &#123;</div><div class="line">        self.bookPrice = 50</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">convenience override init(name: String, price: Double) &#123;</div><div class="line">    self.init(myBookName: name, price: price)</div><div class="line">    self.publicationDate = &quot;2017&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>对于便利构造器我们有一下几点:</p>
-<ul>
-<li><p>便利构造器必须先代理类中的其他构造器</p>
-</li>
-<li><p>便利构造器必须最终代理到指定构造器</p>
-</li>
-<li><p>在便利构造器必须先代理其他构造器再修改属性值</p>
-</li>
-<li><p>在构造器的第一阶段完成前是无法使用self，无法调用实例方法。</p>
-</li>
-<li><p>在便利构造器中我们必须在代理其他构造器后才可以是有self,实例方法</p>
-<p>我们可以通过便利构造器来初始化一个实例:<code>var myBook3 = MyBook(name: &quot;World&quot;, price: 22)</code>,其用法与指定构造器一样</p>
-</li>
-</ul>
-<h2 id="类的可失败构造器"><a href="#类的可失败构造器" class="headerlink" title="类的可失败构造器"></a>类的可失败构造器</h2><p> 对于Book这个类新增一个可失败构造器</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">init?(highPrice:Double) &#123;</div><div class="line">    if  highPrice &lt; 100 &#123; return  nil &#125;</div><div class="line">    self.boonName = &quot;Price&quot;</div><div class="line">    self.bookPrice = highPrice</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ul>
-<li>可失败构造器的语法跟指定构造器的区别是在init后多了一个?</li>
-<li>可失败构造器是指在构造过程当不满足某些条件时返回nil值,在使用可失败构造器初始化实例时返回的是一个可选</li>
-<li>如果在子类的非可失败构造器中向上代理到父类的可失败构造器，那么需要对父类的可失败构造器的代理结果强制解包</li>
-</ul>
-<p>我们可以这样来使用一个可失败构造器:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">if var book4 = Book(highPrice: 55) &#123;</div><div class="line">    book4.bookPrice</div><div class="line">    book4.boonName</div><div class="line">&#125;else &#123;</div><div class="line">    var book5 = Book(highPrice: 120)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="类的必要构造器"><a href="#类的必要构造器" class="headerlink" title="类的必要构造器"></a>类的必要构造器</h2><p>对于Book这个类，新增一个必要构造器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">required init (lowPrice:Double) &#123;</div><div class="line">     boonName = &quot;Run&quot;</div><div class="line">     bookPrice = lowPrice</div><div class="line"> &#125;</div></pre></td></tr></table></figure></p>
-<ul>
-<li><p>必要构造器需要在构造器前面添加关键字 required</p>
-</li>
-<li><p>必要构造器要求子类也要重写这个构造器，并且子类重写的构造器也要添加关键字required</p>
-</li>
-</ul>
-<h2 id="类的继承与重写"><a href="#类的继承与重写" class="headerlink" title="类的继承与重写"></a>类的继承与重写</h2><h3 id="类的继承"><a href="#类的继承" class="headerlink" title="类的继承"></a>类的继承</h3><p>Swift里面的类不会像OC里面子类会自动继承父类的构造方法，必须要满足一定条件子类才会继承父类的构造方法</p>
-<ul>
-<li><p>当满足前提：子类中新引入的属性都有默认值时有下面的规则适用:</p>
-<ul>
-<li>如果子类没有提供自己的指定构造器那么它将自动继承父类的指定构造器</li>
-</ul>
-</li>
-</ul>
-<pre><code>-  如果子类有提供所有父类的指定构造器的实现（可以是通过满足前面条件继承来的也可以是在子类中重写的），那么子类将默认继承父类的便利构造器
-</code></pre><h3 id="类的重写"><a href="#类的重写" class="headerlink" title="类的重写"></a>类的重写</h3><p>子类可以对父类的构造器进行重写，对于重写有如下的一些总结：</p>
-<ul>
-<li>如果父类有必要构造器，子类必须重写父类的必要构造器</li>
-<li>子类可以将父类的指定构造器重写成子类的指定构造器，在构造器前加关键字override</li>
-<li>子类可以将父类的指定构造器重写成为子类的便利构造器，在构造器前加关键字convenience override</li>
-<li>子类严格意义来说是无法重写父类的便利构造的，但是可以在子类中指定一个跟父类的便利构造器一下的构造器实现，这个构造器可以是子类的便利构造器也可以是子类的指定构造器，无论是哪种都不要有override关键字</li>
-</ul>
+<p>我的理解就是：使用柯里化我们可以将复杂的代码拆分成小块，而这些小块可以使用函数的方式组合在一起<br><br>When?<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">typealias Label = (UILabel) -&gt; UILabel</div><div class="line"></div><div class="line">func frame(_ frame:CGRect) -&gt; Label &#123;</div><div class="line">    return &#123; myLabel in</div><div class="line">        myLabel.frame = frame</div><div class="line">        return myLabel</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">func textColor(_ color:UIColor) -&gt; Label &#123;</div><div class="line">    return &#123; myLabel in</div><div class="line">        myLabel.textColor = color</div><div class="line">        return myLabel</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">func text(_ text:String) -&gt; Label &#123;</div><div class="line">    return &#123; myLabel in</div><div class="line">        myLabel.text = text</div><div class="line">        return myLabel</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">func compose(_ myLabel1:@escaping Label,_ myLabel2:@escaping Label) -&gt; Label &#123;</div><div class="line">    return &#123;</div><div class="line">        myLabel in</div><div class="line">       return myLabel2(myLabel1(myLabel))</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">let rect = CGRect(x: 20, y: 20, width: 100, height: 100)</div><div class="line">let color = UIColor.red</div><div class="line"></div><div class="line">let rectAndColor = compose(frame(rect), textColor(color))</div><div class="line">let myLabel = compose(rectAndColor, text(&quot;柯里化&quot;))</div><div class="line">self.view.addSubview(myLabel(UILabel()))</div></pre></td></tr></table></figure></p>
+<p><strong><br>定义compose这个函数是为了调用方便提高代码的可读性，更进一步着还可以再将compose这个复合函数定义成运算符，你没听错就是运算符。
+</strong></p>
+<h3 id="高阶函数"><a href="#高阶函数" class="headerlink" title="高阶函数"></a>高阶函数</h3><p>接收其他函数作为参数的函数有时也被称作高阶函数。<br><br>有一个数组a=[1,2,3,4,5]现在想获取一个新数组b,b的每个元素都比a的元素大一。<br><br>很简单不是，我们有for循环这个大法宝，解决问题无压力。<br><br>但是，在很多语言里面对于数组都是有一个map函数的，这个问题用map解决更简单:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">let a = [1,2,3,4,5]</div><div class="line">let b = a.map()&#123;</div><div class="line">   return $0 + 1</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>那么,map是怎么实现的呢？在这里简单着写个函数用来理解map的实现</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"> func myMap&lt;Elment,T&gt;(_ array:[Elment],_ transform:(Elment) -&gt;T) -&gt; [T] &#123;</div><div class="line">    var result:[T] = []</div><div class="line">    for element in array &#123;</div><div class="line">        result.append(transform(element))</div><div class="line">    &#125;</div><div class="line">    return result;</div><div class="line">&#125;</div><div class="line"></div><div class="line">let a = [1,2,3,4,5]</div><div class="line">let b = myMap(a)&#123;</div><div class="line">    return $0 + 1</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="不可变性"><a href="#不可变性" class="headerlink" title="不可变性"></a>不可变性</h3><p>对于函数式编程最好不要共享实例变量，降低耦合度。</p>
+<h2 id="未完待续，或许下回分解"><a href="#未完待续，或许下回分解" class="headerlink" title="未完待续，或许下回分解"></a>未完待续，或许下回分解</h2><p>函数编程到这里还没入门，下面的有机会再给大家分享。</p>
 
       
     </div>
@@ -492,12 +434,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/Swift/" rel="tag"># Swift</a>
-          
-        </div>
-      
 
       
         
@@ -507,8 +443,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/20/AppStore账号申请/" rel="next" title="AppStore账号申请">
-                <i class="fa fa-chevron-left"></i> AppStore账号申请
+              <a href="/2017/06/14/UIViewController的转场动画/" rel="next" title="UIViewController的转场动画">
+                <i class="fa fa-chevron-left"></i> UIViewController的转场动画
               </a>
             
           </div>
@@ -516,10 +452,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/05/21/Swift构造过程1/" rel="prev" title="Swift构造过程1">
-                Swift构造过程1 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -652,7 +584,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#类的代理规则"><span class="nav-number">1.</span> <span class="nav-text">类的代理规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类的指定构造器"><span class="nav-number">2.</span> <span class="nav-text">类的指定构造器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#父类的指定构造器"><span class="nav-number">2.1.</span> <span class="nav-text">父类的指定构造器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#子类的指定构造器"><span class="nav-number">2.2.</span> <span class="nav-text">子类的指定构造器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类的便利构造器"><span class="nav-number">3.</span> <span class="nav-text">类的便利构造器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类的可失败构造器"><span class="nav-number">4.</span> <span class="nav-text">类的可失败构造器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类的必要构造器"><span class="nav-number">5.</span> <span class="nav-text">类的必要构造器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类的继承与重写"><span class="nav-number">6.</span> <span class="nav-text">类的继承与重写</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#类的继承"><span class="nav-number">6.1.</span> <span class="nav-text">类的继承</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类的重写"><span class="nav-number">6.2.</span> <span class="nav-text">类的重写</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简单的概念"><span class="nav-number">1.</span> <span class="nav-text">简单的概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#函数是个一等值"><span class="nav-number">1.1.</span> <span class="nav-text">函数是个一等值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#柯里化"><span class="nav-number">1.2.</span> <span class="nav-text">柯里化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高阶函数"><span class="nav-number">1.3.</span> <span class="nav-text">高阶函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不可变性"><span class="nav-number">1.4.</span> <span class="nav-text">不可变性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#未完待续，或许下回分解"><span class="nav-number">2.</span> <span class="nav-text">未完待续，或许下回分解</span></a></li></ol></div>
             
 
           </div>
